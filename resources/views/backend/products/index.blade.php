@@ -6,6 +6,12 @@
             <h6 class="m-0 font-weight-bold text-primary">
                 Products
             </h6>
+            <form action="{{ route('admin.products.import') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="file" name="file" class="form-control">
+                        <br>
+                        <button class="btn btn-primary">Import Products</button>
+            </form>
             <div class="ml-auto">
                 @can('create_category')
                     <a href="{{ route('admin.products.create') }}" class="btn btn-primary">
@@ -14,49 +20,67 @@
                     </span>
                         <span class="text">New product</span>
                     </a>
+                    
                 @endcan
+                    
             </div>
+           
         </div>
 
-        @include('partials.backend.filter', ['model' => route('admin.products.index')])
+        <!-- @include('partials.backend.filter', ['model' => route('admin.products.index')]) -->
 
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>ID</th>
+                    <!-- <th>ID</th> -->
                     <th>Image</th>
+
+                    <th>Code</th>
                     <th>Name</th>
-                    <th>Feature</th>
-                    <th>Quantity</th>
-                    <th>Price</th>
-                    <th>Tags</th>
                     <th>Category</th>
-                    <th>Status</th>
-                    <th>Created at</th>
+                    <!-- <th>Feature</th> -->
+                    <!-- <th>Quantity</th> -->
+                    <th>Customer Price</th>
+                    <th>Premium Customer Price</th>
+                    <!-- <th>Tags</th> -->
+                    
+                    <!-- <th>Status</th>
+                    <th>Created at</th> -->
                     <th class="text-center" style="width: 30px;">Action</th>
                 </tr>
                 </thead>
                 <tbody>
                 @forelse($products as $product)
                     <tr>
-                        <td>{{ $product->id }}</td>
-                        <td>
+                        <!-- <td>{{ $product->id }}</td> -->
+                        <!-- <td>
                             @if($product->firstMedia)
                             <img src="{{ asset('storage/images/products/' . $product->firstMedia->file_name) }}"
                                  width="60" height="60" alt="{{ $product->name }}">
                             @else
                                 <img src="{{ asset('img/no-img.png') }}" width="60" height="60" alt="{{ $product->name }}">
                             @endif
+                        </td> -->
+                        <td>
+                            @if($product->product_import_url)
+                            <img src="{{ $product->product_import_url }}"
+                                 width="60" height="60" alt="{{ $product->name }}">
+                            @else
+                                <img src="{{ asset('img/no-img.png') }}" width="60" height="60" alt="{{ $product->name }}">
+                            @endif
                         </td>
-                        <td><a href="{{ route('admin.products.show', $product->id) }}">{{ $product->name }}</a></td>
-                        <td>{{ $product->featured }}</td>
-                        <td>{{ $product->quantity }}</td>
-                        <td>SR {{ $product->price }}</td>
-                        <td class="text-danger">{{ $product->tags->pluck('name')->join(', ') }}</td>
+                        <td>{{ $product->code }}</td>
+                        <td>{{ $product->name }}</td>
                         <td>{{ $product->category ? $product->category->name : NULL }}</td>
-                        <td>{{ $product->status }}</td>
-                        <td>{{ $product->created_at }}</td>
+                        <!-- <td>{{ $product->featured }}</td> -->
+                        <!-- <td>{{ $product->quantity }}</td> -->
+                        <td>{{ $product->price }}</td>
+                        <td>{{ $product->premium_price }}</td>
+                        <!-- <td class="text-danger">{{ $product->tags->pluck('name')->join(', ') }}</td> -->
+                        
+                        <!-- <td>{{ $product->status }}</td>
+                        <td>{{ $product->created_at }}</td> -->
                         <td>
                             <div class="btn-group btn-group-sm">
                                 <a href="{{ route('admin.products.edit', $product) }}" class="btn btn-sm btn-primary">

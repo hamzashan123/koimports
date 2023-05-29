@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\ProductRequest;
+use App\Imports\ProductsImport;
 use App\Models\Category;
 use App\Models\Product;
 use App\Models\Tag;
@@ -12,6 +13,8 @@ use App\Traits\ImageUploadTrait;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class ProductController extends Controller
 {
@@ -32,6 +35,20 @@ class ProductController extends Controller
             ->paginate(\request()->limitBy ?? 10);
 
         return view('backend.products.index', compact('products'));
+    }
+
+    public function importProducts(Request $request){
+        DB::statement("SET foreign_key_checks=0");
+        Product::truncate();
+        DB::statement("SET foreign_key_checks=1");
+        
+        Excel::import(new ProductsImport,request()->file('file'));
+        
+        return redirect()->route('admin.products.index')->with([
+            'message' => 'Product import successfully',
+            'alert-type' => 'success'
+        ]);
+       
     }
 
     public function create(): View

@@ -64,36 +64,42 @@ class ShopProductsComponent extends Component
         }
 
         $products = Product::with('firstMedia');
-
+        
         if ($this->slug == '') {
             $products = $products->activeCategory();
+            
         } else {
-            $category = Category::whereSlug($this->slug)->whereStatus(true)->first();
-
+            $category = Category::whereSlug($this->slug)->first();
+            
             if (is_null($category->parent_id)) {
-                $categoriesIds = Category::whereParentId($category->id)
-                    ->whereStatus(true)->pluck('id')->toArray();
 
-                $products = $products->whereHas('category', function ($query) use ($categoriesIds) {
-                    $query->whereIn('id', $categoriesIds);
-                });
-
+                //dd($category->id);
+                $categoriesIds = Category::whereParentId($category->id)->pluck('id')->toArray();
+                //dd($categoriesIds);
+                // $products = $products->whereHas('category', function ($query) use ($categoriesIds) {
+                //     $query->whereIn('id', $categoriesIds);
+                // });
+                $products = $products->where('category_id', $category->id);
+                
+                
             } else {
-                $products = $products->with('category')
-                    ->whereHas('category', function ($query) {
-                    $query->where([
-                        'slug' => $this->slug,
-                        'status' => true
-                    ]);
-                });
+                // $products = $products->with('category')
+                //     ->whereHas('category', function ($query) {
+                //     $query->where([
+                //         'slug' => $this->slug,
+                //         'status' => true
+                //     ]);
+                // });
+                $products = $products->where('category_id', $category->id);
+                //dd($products->get());
             }
         }
-
+        //dd($products->get());
         $products = $products->active()
             ->hasQuantity()
             ->orderBy($sortField, $sortType)
             ->paginate($this->paginationLimit);
-
+       // dd($products);
         return view('livewire.frontend.product.shop-products-component', compact('products'));
     }
 }

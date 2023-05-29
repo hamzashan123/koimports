@@ -19,6 +19,7 @@
                                                              alt="{{ $product->name }}">
                                                     </a>
                                                 @else
+                                                
                                                     <img src="{{ asset('img/no-img.png' ) }}"
                                                          alt="{{ $product->name }}">
                                                 @endif
@@ -37,7 +38,11 @@
                                     @endforeach
                                 </div>
                             @else
-                                <img src="{{ asset('img/no-img.png' ) }}" alt="{{ $product->name }}">
+                                <div class="mainproductsingleimage">
+                                            <img src="{{ $product->product_import_url }}" alt="{{ $product->name }}">   
+                                </div>
+                               
+                                <!-- <img src="{{ asset('img/no-img.png' ) }}" alt="{{ $product->name }}"> -->
                             @endif
                         </div>
                     </div>
@@ -66,17 +71,22 @@
                             </div>
                         </div>
                         <div class="details-price">
-                            <span>${{ $product->price }}</span>
+                                        @if(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'premium')
+                                            <span>${{ $product->premium_price }}</span>
+                                        @elseif(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'general')
+                                            <span>${{ $product->price }}</span>
+                                        @endif
+                            
                         </div>
                         <p>{{ $product->description }}</p>
                         <livewire:frontend.product.single-product-cart-component :product="$product"/>
                         <div class="product-details-cati-tag mt-35">
                             <ul>
-                                <li class="categories-title">Categories :</li>
+                                <li class="categories-title">Category :</li>
                                 <li><a href="{{ route('shop.index', $product->category->slug) }}">{{ $product->category->name }}</a></li>
                             </ul>
                         </div>
-                        <div class="product-details-cati-tag mtb-10">
+                        <!-- <div class="product-details-cati-tag mtb-10">
                             <ul>
                                 <li class="categories-title">Tags :</li>
                                 <li>
@@ -88,15 +98,15 @@
                                     @endif
                                 </li>
                             </ul>
-                        </div>
-                        <div class="product-share">
+                        </div> -->
+                        <!-- <div class="product-share">
                             <ul>
                                 <li class="categories-title">Share :</li>
                                 <li>
                                     @include('partials.frontend.shareBtn')
                                 </li>
                             </ul>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -105,14 +115,14 @@
     <div class="product-description-review-area pb-90">
         <div class="container">
             <div class="product-description-review text-center">
-                <div class="description-review-title nav" role=tablist>
+                <!-- <div class="description-review-title nav" role=tablist>
                     <a class="active" href="#pro-review" data-toggle="tab" role="tab" aria-selected="false">
                         Reviews ({{ $product->approved_reviews_count }})
                     </a>
                     <a href="#pro-dec" data-toggle="tab" role="tab" aria-selected="true">
                         Description
                     </a>
-                </div>
+                </div> -->
                 <div class="description-review-text tab-content">
                     <div class="tab-pane fade" id="pro-dec" role="tabpanel">
                         <p>{!! $product->details !!}</p>

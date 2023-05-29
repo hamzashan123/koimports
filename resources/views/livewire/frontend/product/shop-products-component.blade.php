@@ -37,13 +37,15 @@
                             <div class="col-lg-4 col-xl-3 col-md-6">
                                 <div class="product-fruit-wrapper mb-60">
                                     <div class="product-fruit-img">
-                                        @if($product->firstMedia)
+                                        <!-- @if($product->firstMedia)
                                             <img src="{{ asset('storage/images/products/' . $product->firstMedia->file_name ) }}"
                                                  alt="{{ $product->name }}">
                                         @else
                                             <img src="{{ asset('img/cartwhite.png' ) }}" alt="">
-                                        @endif
-                                        <div class="product-furit-action">
+                                        @endif -->
+                                        <img src="{{ $product->product_import_url }}"
+                                                 alt="{{ $product->name }}">
+                                        <!-- <div class="product-furit-action">
                                             <a wire:click.prevent="addToCart('{{ $product->id }}')"
                                                class="furit-animate-left" title="Add To Cart">
                                                 <i class="fas fa-shopping-cart"></i>
@@ -52,14 +54,18 @@
                                                class="furit-animate-right" title="Wishlist">
                                                 <i class="fas fa-heart"></i>
                                             </a>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <div class="product-fruit-content text-center">
                                         <h4>
                                             <a href="{{route('product.show', $product->slug)}}">{{ $product->name }}</a>
                                         </h4>
-                                        <span>${{ $product->price }}</span>
-                                        <div>
+                                        @if(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'premium')
+                                            <span>${{ $product->premium_price }}</span>
+                                        @elseif(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'general')
+                                            <span>${{ $product->price }}</span>
+                                        @endif
+                                        <!-- <div>
                                             @if($product->tags->count() > 0)
                                                 @foreach($product->tags as $tag)
                                                     <label for="" class="small">
@@ -70,7 +76,7 @@
                                                     </label>
                                                 @endforeach
                                             @endif
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>
@@ -85,12 +91,15 @@
                             <div class="col-lg-12">
                                 <div class="product-wrapper mb-30 single-product-list product-list-right-pr mb-60">
                                     <div class="product-img list-img-width">
-                                        @if($product->firstMedia)
+                                        <!-- @if($product->firstMedia)
                                             <img src="{{ asset('storage/images/products/' . $product->firstMedia->file_name ) }}"
                                                  alt="{{ $product->name }}" width="150">
                                         @else
                                             <img src="{{ asset('img/cartwhite.png' ) }}" alt="{{ $product->name }}" style="width: 100%;">
-                                        @endif
+                                        @endif -->
+
+                                        <img src="{{ $product->product_import_url }}"
+                                                 alt="{{ $product->name }}">
                                     </div>
                                     <div class="product-content-list">
                                         <div class="product-list-info">
@@ -99,8 +108,14 @@
                                                     {{ $product->name }}
                                                 </a>
                                             </h4>
-                                            <span>${{ $product->price }}</span>
-                                            @if($product->tags->count() > 0)
+
+                                            @if(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'premium')
+                                                <span>${{ $product->premium_price }}</span>
+                                            @elseif(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'general')
+                                                <span>${{ $product->price }}</span>
+                                            @endif
+                                            
+                                            <!-- @if($product->tags->count() > 0)
                                                 @foreach($product->tags as $tag)
                                                     <label>
                                                         <a href="{{ route('shop.tag', $tag->slug) }}">
@@ -108,10 +123,10 @@
                                                         </a>
                                                     </label>
                                                 @endforeach
-                                            @endif
+                                            @endif -->
                                             <p>{{ $product->description }}</p>
                                         </div>
-                                        <div class="product-list-cart-wishlist">
+                                        <!-- <div class="product-list-cart-wishlist">
                                             <div class="product-list-cart">
                                                 <a wire:click="addToCart('{{ $product->id }}')"
                                                    class="btn-hover list-btn-style" title="Add To Cart" style="cursor: pointer">
@@ -125,7 +140,7 @@
                                                     <i class='far fa-heart'></i>
                                                 </a>
                                             </div>
-                                        </div>
+                                        </div> -->
                                     </div>
                                 </div>
                             </div>

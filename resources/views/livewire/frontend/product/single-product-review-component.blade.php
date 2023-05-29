@@ -1,4 +1,4 @@
-<div class="blog-details content" x-data="{ showForm: @entangle('showForm') }">
+<!-- <div class="blog-details content" x-data="{ showForm: @entangle('showForm') }">
     <div class="comments_area pb-5">
         <ul class="comment__list">
             @forelse($product->approvedReviews as $review)
@@ -117,4 +117,4 @@
             Login to write a review!
         </a>
     @endauth
-</div>
+</div> -->

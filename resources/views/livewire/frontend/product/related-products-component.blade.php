@@ -1,4 +1,4 @@
-<div class="product-area pb-95">
+<!-- <div class="product-area pb-95">
     <div class="container">
         <div class="text-center mb-50">
             <h2>Related products</h2>
@@ -36,4 +36,4 @@
             @endforelse
         </div>
     </div>
-</div>
+</div> -->

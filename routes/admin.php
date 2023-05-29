@@ -37,6 +37,7 @@ Route::group(['middleware' => ['roles']], function () {
     Route::resource('categories', CategoryController::class);
     Route::post('/products/remove-image', [ProductController::class, 'removeImage'])->name('products.remove_image');
     Route::resource('products', ProductController::class);
+    Route::post('/products/import', [ProductController::class, 'importProducts'])->name('products.import');
     Route::resource('tags', TagController::class);
     Route::resource('coupons', CouponController::class);
     Route::resource('reviews', ReviewController::class);
@@ -57,5 +58,7 @@ Route::group(['middleware' => ['roles']], function () {
     Route::resource('contacts', ContactController::class)->except('create', 'edit', 'update');
     Route::resource('links', LinkController::class)->except('show');
     Route::resource('pages', PageController::class);
+    Route::get('order/customer-orders', [OrderController::class, 'getCustomerOrder'])->name('customer.order');
+    
 });
 

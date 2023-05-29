@@ -75,13 +75,13 @@
 
                 <div class="row">
                     <div class="col-6">
-                        <label for="receive-email">Receive Email</label>
-                        <select name="receive_email" id="receive-email" class="form-control">
-                            <option value="">---</option>
-                            <option value="1" {{ old('receive_email', $user->receive_email) == 1 ? 'selected' : null }}>Yes</option>
-                            <option value="0" {{ old('receive_email', $user->receive_email) == 0 ? 'selected' : null }}>No</option>
+                        <label for="receive-email">Customer Type</label>
+                        <select name="customer_type" id="customer_type" class="form-control">
+                            
+                            <option value="general" {{ old('customer_type', $user->customer_type) == 'general' ? 'selected' : null }}>General Customer</option>
+                            <option value="premium" {{ old('customer_type', $user->customer_type) == 'premium' ? 'selected' : null }}>Premium Customer</option>
                         </select>
-                        @error('receive_email')<span class="text-danger">{{ $message }}</span>@enderror
+                        @error('customer_type')<span class="text-danger">{{ $message }}</span>@enderror
                     </div>
                     <div class="col-6">
                         <div class="form-group">

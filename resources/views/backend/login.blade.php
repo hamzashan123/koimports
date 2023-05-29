@@ -16,10 +16,10 @@
                                 <form class="user" action="{{ route('login') }}" method="POST">
                                     @csrf
                                     <div class="form-group">
-                                        <input type="text" name="username" value="{{ old('username') }}"
+                                        <input type="text" name="email" value="{{ old('email') }}"
                                                class="form-control form-control-user"
-                                               placeholder="Enter Your Username">
-                                        @error('username')<span class="text-danger">{{ $message }}</span>@enderror
+                                               placeholder="Enter Your email">
+                                        @error('email')<span class="text-danger">{{ $message }}</span>@enderror
                                     </div>
                                     <div class="form-group">
                                         <input type="password" name="password" value="{{ old('password') }}"

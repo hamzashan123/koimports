@@ -31,6 +31,11 @@ class OrderController extends Controller
         return view('backend.orders.index', compact('orders'));
     }
 
+    public function getCustomerOrder(){
+        $orders = Order::all();
+        return view('backend.orders.customer-orders', compact('orders'));
+    }
+
     public function show(Order $order): View
     {
         $this->authorize('show_order');

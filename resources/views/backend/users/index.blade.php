@@ -17,7 +17,7 @@
                 @endcan
             </div>
         </div>
-        @include('partials.backend.filter', ['model' => route('admin.users.index')])
+        <!-- @include('partials.backend.filter', ['model' => route('admin.users.index')]) -->
 
         <div class="table-responsive">
             <table class="table table-hover">
@@ -25,10 +25,11 @@
                 <tr>
                     <th>ID</th>
                     <th>Image</th>
-                    <th>Name & Username</th>
+                    <th>Username</th>
+                    <th>Customer Type</th>
                     <th>Email & Phone</th>
                     <th>Status</th>
-                    <th>Created at</th>
+                    <!-- <th>Created at</th> -->
                     <th class="text-center" style="width: 30px;">Action</th>
                 </tr>
                 </thead>
@@ -44,16 +45,15 @@
                             @endif
                         </td>
                         <td>
-                            <a href="{{ route('admin.users.show', $user->id) }}">
-                                {{ $user->full_name }}
-                            </a><br>
-                            <strong>( {{ $user->username }} )</strong>
+                            
+                            <strong>{{ $user->username }} </strong>
                         </td>
+                        <td>{{ $user->customer_type }}</td>
                         <td>{{ $user->email }}<br>
                             {{ $user->phone }}
                         </td>
                         <td>{{ $user->status }}</td>
-                        <td>{{ $user->created_at ? $user->created_at->format('Y-m-d') : '' }}</td>
+                        <!-- <td>{{ $user->created_at ? $user->created_at->format('Y-m-d') : '' }}</td> -->
                         <td>
                             <div class="btn-group btn-group-sm">
                                 <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-sm btn-primary">

@@ -22,11 +22,11 @@
         @empty
         @endforelse
     </div>
-    <div class="sidebar-widget mb-40">
+    <!-- <div class="sidebar-widget mb-40">
         <h3 class="sidebar-title">TAGS</h3>
         <hr style="margin-top: 0; margin-bottom: 10px; border: solid 1px;">
         <div class="price_filter">
-{{--            <div id="slider-range"></div>--}}
+            <div id="slider-range"></div>
             <div class="price_slider_amount">
                 <div class="sidebar-categories">
                     <ul>
@@ -77,5 +77,5 @@
                 </li>
             @endforeach
         </ul>
-    </div>
+    </div> -->
 </div>

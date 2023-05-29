@@ -59,6 +59,7 @@ class UserController extends Controller
             'first_name' => $request->first_name,
             'last_name' => $request->last_name,
             'username' => $request->username,
+            'customer_type' => $request->customer_type,
             'email' => $request->email,
             'email_verified_at' => now(),
             'phone' => $request->phone,
@@ -114,6 +115,7 @@ class UserController extends Controller
             'phone' => $request->phone,
             'status' => $request->status,
             'receive_email' => $request->receive_email,
+            'customer_type' => $request->customer_type,
             'user_image' => $userImage ?? $user->user_image,
             'password' => $password ?? $user->password
         ]);

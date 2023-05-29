@@ -43,6 +43,14 @@
                                                 {{ $global_category->name }}
                                             </a>
                                         </li>
+                                            @forelse($global_category->appearedChildren as $sub_category)
+                                                <li class="mb-2" style="padding-left: 10px;" >
+                                                    <a class="reset-anchor" href="{{ route('shop.index', $sub_category->slug) }}">
+                                                        {{ $sub_category->name }}
+                                                    </a>
+                                                </li>
+                                            @empty
+                                            @endforelse
                                     @endforeach
                                 </ul>
                             </li>

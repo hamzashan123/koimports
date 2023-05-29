@@ -5,7 +5,6 @@ namespace Database\Seeders;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Database\Seeder;
-use Illuminate\Validation\Rules\Unique;
 
 class ProductsTableSeeder extends Seeder
 {
@@ -20,12 +19,12 @@ class ProductsTableSeeder extends Seeder
 
         for($i = 1; $i <= 20; $i ++) {
             $products[] = [
-                'name'          => 'test',
-                'slug'          => rand(2,99).'2',
-                'description'   =>'test',
-                'details'       => 'test',
-                'price'         => 22,
-                'quantity'      => 1,
+                'name'          => fake()->sentence(2, true),
+                'slug'          => fake()->unique()->slug(2, true),
+                'description'   => fake()->paragraph,
+                'details'       => fake()->paragraph,
+                'price'         => fake()->numberBetween(5, 200),
+                'quantity'      => fake()->numberBetween(10, 100),
                 'category_id'   => $categories->random(),
                 'featured'      => rand(0, 1),
                 'status'        => true,

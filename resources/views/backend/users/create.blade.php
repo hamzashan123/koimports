@@ -75,6 +75,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <div class="row">
                     <div class="col-6">
                         <div class="form-group">
@@ -94,6 +95,18 @@
                             @error('password-confirm')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <label for="receive-email">Customer Type</label>
+                        <select name="customer_type" id="customer_type" class="form-control">
+                            
+                            <option value="general" >General Customer</option>
+                            <option value="premium" >Premium Customer</option>
+                        </select>
+                        @error('customer_type')<span class="text-danger">{{ $message }}</span>@enderror
+                    </div>
+                    
                 </div>
                 <div class="row">
                     <div class="col-12">
