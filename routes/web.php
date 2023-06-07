@@ -31,6 +31,11 @@ Route::get('/page/{slug}', [PageController::class, 'show'])->name('page.show');
 Route::get('order/upload-orders', [OrderController::class, 'showOrderForm'])->name('upload.order');
 Route::post('order/upload-orders', [OrderController::class, 'saveOrder'])->name('save.order');
 
+Route::get('/about', [HomeController::class, 'aboutus'])->name('aboutus');
+Route::get('/termofservice', [HomeController::class, 'termofservice'])->name('termofservice');
+Route::get('/privacy-policy', [HomeController::class, 'privacypolicy'])->name('privacypolicy');
+Route::get('/faqs', [HomeController::class, 'faqs'])->name('faqs');
+
 // Login by social media [ Facebook - Twitter - Google ]
 Route::get('login/{provider}', [LoginController::class, 'redirectToProvider'])->name('social_login');
 Route::get('login/{provider}/callback', [LoginController::class, 'handleProviderCallback'])->name('social_login_callback');

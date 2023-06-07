@@ -72,7 +72,7 @@
                                  <a href="{{route('home')}}">HOME</a>
                                 </li>
                                 <li>
-                                    <a href="">ABOUT</a>
+                                    <a href="{{route('aboutus')}}">ABOUT</a>
                                 </li>
                                 <li>
                                      <a href="{{route('shop.index')}}">SHOP</a>
@@ -112,18 +112,18 @@
                         <div class="food-widget-content">
                             <ul>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('termofservice')}}">
                                        Terms & Condition
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('privacypolicy')}}">
                                        Privacy Policy
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('faqs')}}">
                                        FAQs
                                     </a>
                                 </li>

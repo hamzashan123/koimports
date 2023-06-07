@@ -37,4 +37,23 @@ class HomeController extends Controller
 
         return response()->json($data);
     }
+
+    public function aboutus(){
+        return view('frontend.pages.aboutus');
+    }
+
+    public function termofservice(){
+
+        return view('frontend.pages.termofservice');
+    }
+
+    public function privacypolicy(){
+
+        return view('frontend.pages.privacypolicy');
+    }
+
+    public function faqs(){
+
+        return view('frontend.pages.faqs');
+    }
 }
