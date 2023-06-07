@@ -45,7 +45,7 @@ class TopTrendingProducts extends Component
                 ->active()
                 ->hasQuantity()
                 ->activeCategory()
-                ->take(8)
+                ->take(12)
                 ->get()
         ]);
     }
