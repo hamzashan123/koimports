@@ -9,33 +9,28 @@ use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
 
-class UserSignUp extends Mailable
+class UserRoleAssignActive extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $admin;
     protected $firstname;
     protected $lastname;
     protected $username;
     protected $email;
-    public $subject;
     protected $msg;
-    
 
     /**
      * Create a new message instance.
      */
     public function __construct($data)
     {
-        $this->admin = $data['admin'];
         $this->firstname = $data['firstname'];
         $this->lastname = $data['lastname'];
         $this->username = $data['username'];
         $this->email = $data['email'];
-        $this->subject = $data['subject'];
         $this->msg = $data['msg'];
     }
-
+    
 
     /**
      * Get the attachments for the message.
@@ -45,21 +40,19 @@ class UserSignUp extends Mailable
     public function attachments(): array
     {
         return [];
-        
     }
 
-    public function build()
-    {
-        return $this->view('emails.usersignup')
-        ->subject($this->subject)
-                    ->with([
-                        'admin' => $this->admin,
+    public function build(){
+
+        return $this->view('emails.roleAssignUser')
+        ->subject('Account activated')
+        ->with([
+                        
                         'firstname' => $this->firstname,
                         'lastname' => $this->lastname,
                         'username' => $this->username,
                         'email' => $this->email,
                         'msg' => $this->msg
-                    ]);
+        ]);
     }
-
 }

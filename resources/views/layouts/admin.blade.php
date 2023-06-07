@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <meta name="description" content="">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="shortcut icon" href="{{ asset('img/logonew.png') }}">
+    <link rel="shortcut icon" href="{{ asset('img/favicon.png') }}">
     <title>{{ config('app.name', 'Laravel') }} | @yield('title', 'Dashboard')</title>
     <!-- Fonts -->
     <link href="{{ asset('backend/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">

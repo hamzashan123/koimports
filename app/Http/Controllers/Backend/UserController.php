@@ -4,13 +4,14 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Backend\UserRequest;
+use App\Mail\UserRoleAssignActive;
 use App\Models\User;
 use App\Services\ImageService;
 use App\Traits\ImageUploadTrait;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
-
+use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
@@ -119,6 +120,24 @@ class UserController extends Controller
             'user_image' => $userImage ?? $user->user_image,
             'password' => $password ?? $user->password
         ]);
+
+        
+        $userdata = [
+            'firstname' => $user->first_name,
+            'lastname' => $user->last_name,
+            'username' => $user->username,
+            'email' => $user->email,
+            'subject' => 'Account Activated',
+            'msg' => 'Your account has been successfully activated. You can now login and check product prices. '
+        ];
+
+        
+        try {
+            Mail::to($user->email)->send(new UserRoleAssignActive($userdata));
+        } catch (\Exception $e) {
+          
+        }
+        
 
         return redirect()->route('admin.users.index')->with([
             'message' => 'Updated successfully',

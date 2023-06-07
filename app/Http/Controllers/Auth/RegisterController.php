@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\UserSignUp;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
@@ -69,6 +70,7 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        
        
         $user = User::create([
             'first_name' => $data['first_name'],
@@ -76,6 +78,7 @@ class RegisterController extends Controller
             'username' => $data['username'],
             'email' => $data['email'],
             'phone' => $data['phone'],
+            'email_verified_at' => Carbon::now(),
             'password' => Hash::make($data['password']),
             'status' => false
         ]);
@@ -83,14 +86,42 @@ class RegisterController extends Controller
         $user->assignRole('user');
 
         $userdata = [
+            'admin' => false,
             'firstname' => $user->first_name,
             'lastname' => $user->last_name,
             'username' => $user->username,
             'email' => $user->email,
-            'subject' => 'Your application has been submitted ',
+            'subject' => 'Registration Successful',
             'msg' => 'You have successfully registered to koimports.com ltd. Your Account is Under Reviewed. As soon as it will active you will receive an updates through Email.'
         ];
-        Mail::to($user->email)->send(new UserSignUp($userdata));
+
+        try {
+            Mail::to($user->email)->send(new UserSignUp($userdata));
+        } catch (\Exception $e) {
+          
+        }
+
+        $admindata = [
+            'admin' => true,
+            'firstname' => $user->first_name,
+            'lastname' => $user->last_name,
+            'username' => $user->username,
+            'email' => $user->email,
+            'subject' => 'KoImports User Registration',
+            'msg' => 'A new user registered into koimports.com ltd. Please check the admin and change status to active also assign customer type.'
+        ];
+
+        try {
+            
+            $adminemail = User::role('admin')->first();
+            Mail::to($adminemail->email)->send(new UserSignUp($admindata));
+        } catch (\Exception $e) {
+          
+        }
+
+
+
+       
         return $user;
     }
 }
