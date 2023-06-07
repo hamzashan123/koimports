@@ -70,8 +70,11 @@
                                     <img 
                                         src="{{ asset('storage/images/categories/' . $category->cover ?? '') }}"
                                         alt="{{ $category->name ?? '' }}">
-                                    <h4> {{ $category->name }} </h4>  
+                                    
                                     </a>  
+                                    <a class="headingCategoryName" href="{{ route('shop.index', $category->slug) }}">
+                                        {{ $category->name }} 
+                                    </a>
                                 </li>
                                 @endif
                             @endforeach
