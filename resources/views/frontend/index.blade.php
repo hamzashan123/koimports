@@ -214,6 +214,20 @@ var splideCategoryCarousel = new Splide( '.splide', {
   perPage: 4,
   autoplay: true,
   perMove: 1,
+  breakpoints: {
+            1024: {
+              perPage: 2,
+             
+            },
+            767: {
+              perPage: 1,
+          
+            },
+            640: {
+              perPage: 1,
+        
+            },
+          },
 } );
 
 splideCategoryCarousel.mount();
