@@ -64,10 +64,15 @@
                             <ul class="splide__list">
                             @foreach($categories as $category) 
                             @if(!empty($category->cover) )
+
                                 <li class="splide__slide"> 
+                                    <a href="{{ route('shop.index', $category->slug) }}">
                                     <img 
                                         src="{{ asset('storage/images/categories/' . $category->cover ?? '') }}"
-                                        alt="{{ $category->name ?? '' }}"></li>
+                                        alt="{{ $category->name ?? '' }}">
+                                    <h4> {{ $category->name }} </h4>  
+                                    </a>  
+                                </li>
                                 @endif
                             @endforeach
                             </ul>
