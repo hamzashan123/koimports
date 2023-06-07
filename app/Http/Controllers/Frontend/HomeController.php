@@ -18,8 +18,6 @@ class HomeController extends Controller
 
         $categories = Category::select('slug', 'cover', 'name')
             ->active()
-            ->whereParentId(null)
-            
             ->get();
 
         return view('frontend.index', compact('categories', 'coupon'));
