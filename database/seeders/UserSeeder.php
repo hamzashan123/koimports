@@ -16,17 +16,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $userRole = Role::create(['name' => 'user']);
-        $user = User::create([
-            'first_name' => 'Ali',
-            'last_name' => 'Al Qahtani',
-            'username' => 'ali',
-            'email' => 'ali@ali.com',
-            'phone' => '0505050500',
-            'password' => bcrypt('ali'),
-            'email_verified_at' => Carbon::now(),
-        ]);
-        $user->assignRole('user');
+        
 
 //        $userPermissions = [
 //            'create_review',

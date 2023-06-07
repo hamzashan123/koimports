@@ -63,7 +63,7 @@
                             <nav id="mobile-menu-active">
                                 <ul class="menu-overflow">
                                     <li><a href="{{route('home')}}">HOME</a></li>
-                                    <li><a href="">ABOUT</a></li>
+                                    <li><a href="{{route('aboutus')}}">ABOUT</a></li>
                                     <li><a href="{{route('shop.index')}}">SHOP</a></li>
 
                                     <li><a href="#">Ponds</a>
@@ -140,7 +140,7 @@
                         <ul>
                             <li><a href="{{route('home')}}">Home</a></li>
                             <li>
-                                <a href="#">About Us</a>
+                                <a href="{{route('aboutus')}}">About Us</a>
                                 <!-- <ul class="single-dropdown">
                                     @include('partials.frontend.pages')
                                 </ul> -->

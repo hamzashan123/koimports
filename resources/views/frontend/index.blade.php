@@ -11,19 +11,71 @@
 <!-- promotion area end -->
 
 @include('partials.frontend.sliders')
+
+<!-- services area start -->
+<div class="fruits-services ptb-50 delivery-quality-experience">
+    <div class="fruits-services-wrapper">
+        <div class="single-fruits-services">
+            
+            <div class="fruits-services-content">
+            <img src="{{asset('images/truck.png')}}" alt="">
+                <h4>24 Hour Delivery</h4>
+                <p>KOImports offer a 24 hour UK delivery service on all non bulky orders up to 25 kilos.</p>
+            </div>
+        </div>
+        <div class="single-fruits-services">
+           
+            <div class="fruits-services-content">
+            <img src="{{asset('images/quality.png')}}" alt="">
+                <h4>Quality Products</h4>
+                <p>With many sole distribution rights, we believe we can supply not only great value but the best quality branded products.</p>
+            </div>
+        </div>
+        <div class="single-fruits-services">
+            
+            <div class="fruits-services-content">
+            <img src="{{asset('images/experience.png')}}" alt="">
+                <h4>Experience</h4>
+                <p>We have over 25 years experience in the Koi trade and are very passionate and knowledgeable about all of our products.</p>
+            </div>
+        </div>
+
+        <div class="single-fruits-services">
+           
+            <div class="fruits-services-content">
+            <img src="{{asset('images/family.png')}}" alt="">
+                <h4>Family Business</h4>
+                <p>As a family run business, we pride ourselves in delivering an outstanding, efficient service ensuring your needs are paramount.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- services area end -->
+
+
 <!-- categories area start -->
-<div class="container">
-    <div class="pb-50">
-        <div class="section-title-furits text-center">
-            <img src="{{ asset('frontend/img/icon-img/49.png') }}" alt="">
+<div class="container our-categories">
+    <div class="ptb-50">
+        <div class="section-title-furits text-center mb-95">
             <h2>BROWSE OUR CATEGORIES</h2>
         </div>
-        <br>
+
         <section>
-            <header class="text-center">
-                <p class="small text-muted small text-uppercase mb-1">Carefully created collections</p>
-                <h2 class="h5 text-uppercase mb-4">Browse our categories</h2>
-            </header>
+            <div class="row">
+                
+           
+                    @foreach($categories as $category) 
+                    <div class="col-md-4">
+                        <img class="img-fluid"
+                                    src="{{ asset('storage/images/categories/' . $category->cover ?? '') }}"
+                                    alt="{{ $category->name ?? '' }}">
+                    </div>
+                    @endforeach
+            </div>
+        </section>
+    
+        <!-- <section>
+           
             <div class="row">
                 <div class="col-md-4 mb-4 mb-md-0">
                     <a class="category-item" href="{{ route('shop.index', $categories[0]->slug ?? '') }}">
@@ -79,7 +131,7 @@
                     </a>
                 </div>
             </div>
-        </section>
+        </section> -->
     </div>
 </div>
 <!-- categories area end -->
@@ -130,46 +182,11 @@
 <!-- banner area end -->
 
 <!-- TRENDING PRODUCTS -->
-<div class="container">
+<div class="container our-products">
     <livewire:frontend.product.top-trending-products />
 </div>
 
-<!-- services area start -->
-<div class="fruits-services ptb-200">
-    <div class="fruits-services-wrapper">
-        <div class="single-fruits-services">
-            <div class="fruits-services-img">
-                <img src="{{asset('img/logonew.png')}}" alt="">
-            </div>
-            <div class="fruits-services-content">
-                <h4>Free Shipping</h4>
-                <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is simply
-                    industry.</p>
-            </div>
-        </div>
-        <div class="single-fruits-services">
-            <div class="fruits-services-img">
-                <img src="{{asset('img/logonew.png')}}" alt="">
-            </div>
-            <div class="fruits-services-content">
-                <h4>Money Guarentee.</h4>
-                <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is simply
-                    industry.</p>
-            </div>
-        </div>
-        <div class="single-fruits-services">
-            <div class="fruits-services-img">
-                <img src="{{asset('img/logonew.png')}}" alt="">
-            </div>
-            <div class="fruits-services-content">
-                <h4>Online Support</h4>
-                <p>Lorem Ipsum is simply dummy text of the and typesetting industry. Lorem Ipsum is simply
-                    industry.</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- services area end -->
+
 
 <script>
   
