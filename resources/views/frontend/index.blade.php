@@ -214,6 +214,7 @@ var splideCategoryCarousel = new Splide( '.splide', {
   perPage: 4,
   autoplay: true,
   perMove: 1,
+  pagination: false,
   breakpoints: {
             1024: {
               perPage: 2,
