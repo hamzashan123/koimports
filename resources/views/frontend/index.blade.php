@@ -204,7 +204,7 @@
 var splideCategoryCarousel = new Splide( '.splide', {
   type   : 'loop',
   perPage: 4,
-  autoplay: 'pause',
+  autoplay: true,
   perMove: 1,
 } );
 
