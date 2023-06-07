@@ -42,7 +42,7 @@
 
 
 
-<div class="shop-sidebar mr-50">
+<div class="shop-sidebar ">
     <div class="sidebar-widget mb-40">
         <h3 class="sidebar-title">CATEGORIES</h3>
         @forelse($shop_categories_menu as $category)
