@@ -59,20 +59,23 @@
         <div class="section-title-furits text-center mb-95">
             <h2>BROWSE OUR CATEGORIES</h2>
         </div>
-
+        <div class="splide" role="group" aria-label="Splide Basic HTML Example">
+                    <div class="splide__track">
+                            <ul class="splide__list">
+                            @foreach($categories as $category) 
+                            @if(!empty($category->cover) )
+                                <li class="splide__slide"> 
+                                    <img 
+                                        src="{{ asset('storage/images/categories/' . $category->cover ?? '') }}"
+                                        alt="{{ $category->name ?? '' }}"></li>
+                                @endif
+                            @endforeach
+                            </ul>
+                    </div>
+                </div>
         <section>
             <div class="row">
                 
-           
-                    @foreach($categories as $category) 
-                        @if(!empty($category->cover) )
-                    <div class="col-md-4">
-                        <img class="img-fluid"
-                                    src="{{ asset('storage/images/categories/' . $category->cover ?? '') }}"
-                                    alt="{{ $category->name ?? '' }}">
-                    </div>
-                    @endif
-                    @endforeach
             </div>
         </section>
     
@@ -192,10 +195,20 @@
 
 <script>
   
-  new Splide('.splide', {
-	type: 'loop',
-    autoplay: 'pause',
-}).mount();
+//   new Splide('.splide', {
+// 	type: 'loop',
+//     autoplay: 'pause',
+// }).mount();
+
+
+var splideCategoryCarousel = new Splide( '.splide', {
+  type   : 'loop',
+  perPage: 4,
+  autoplay: 'pause',
+  perMove: 1,
+} );
+
+splideCategoryCarousel.mount();
 
 </script>
 @endsection
