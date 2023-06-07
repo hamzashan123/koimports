@@ -9833,7 +9833,10 @@ h6.footerCustomHeading {
     vertical-align: middle;
 }
 
-
+.splide__slide img {
+    border-radius: 25px;
+    padding: 10px;
+}
 
 .splide__arrow--next, .splide__arrow--prev {
     background: #050035 !important;
