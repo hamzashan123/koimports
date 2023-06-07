@@ -9833,9 +9833,7 @@ h6.footerCustomHeading {
     vertical-align: middle;
 }
 
-.splide__slide {
-    height: 70vh;
-}
+
 
 .splide__arrow--next, .splide__arrow--prev {
     background: #050035 !important;
