@@ -10015,6 +10015,46 @@ ul.single-dropdown.dasboard-account li:after {
 }
 
 
+.container.our-products h2, .container.our-categories h2 {
+    font-weight: bold !important;
+    color: #050035 !important;
+    text-transform: uppercase;
+}
+
+
+
+a.headingCategoryName {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background: #050035;
+    color: white;
+    font-weight: bold;
+    padding: 10px 30px;
+    font-size: 16px;
+}
+
+
+
+
+
+.splide__slide:hover 
+ a.headingCategoryName {
+    display: block;
+    transition: .3s;
+}
+
+.splide__slide:hover img {
+    opacity: 0.7;
+    transition: .3s;
+
+}
+
+
+
 @media only screen and (max-width:768px) {
 
     .logo-2 {
