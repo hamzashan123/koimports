@@ -65,7 +65,7 @@
                 
            
                     @foreach($categories as $category) 
-                        @if(empty($category->cover) )
+                        @if(!empty($category->cover) )
                     <div class="col-md-4">
                         <img class="img-fluid"
                                     src="{{ asset('storage/images/categories/' . $category->cover ?? '') }}"
