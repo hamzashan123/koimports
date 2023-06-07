@@ -2,28 +2,32 @@
 
 @section('content')
     <div class="card shadow mb-4">
-        <div class="card-header py-3 d-flex">
-            <h6 class="m-0 font-weight-bold text-primary">
-                Products
-            </h6>
-            <form action="{{ route('admin.products.import') }}" method="POST" enctype="multipart/form-data">
+        <div class="card-header py-3 d-flex space-between">
+            <div>
+                <h6 class="m-0 font-weight-bold text-primary">
+                    Products
+                </h6>
+            </div>
+            <div class="productForm">
+            <form action="{{ route('admin.products.import') }}" method="POST" enctype="multipart/form-data" class="importProductsForm">
                         @csrf
-                        <input type="file" name="file" class="form-control">
+                        <input type="file" name="file" class="form-control fileUpload">
                         <br>
                         <button class="btn btn-primary">Import Products</button>
             </form>
-            <div class="ml-auto">
+            </div>
+            <!-- <div class="ml-auto"> -->
                 @can('create_category')
-                    <a href="{{ route('admin.products.create') }}" class="btn btn-primary">
+                    <!-- <a href="{{ route('admin.products.create') }}" class="btn btn-primary">
                     <span class="icon text-white-50">
                         <i class="fa fa-plus"></i>
                     </span>
                         <span class="text">New product</span>
-                    </a>
+                    </a> -->
                     
                 @endcan
                     
-            </div>
+            <!-- </div> -->
            
         </div>
 

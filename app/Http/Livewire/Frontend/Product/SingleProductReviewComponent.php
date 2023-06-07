@@ -28,24 +28,24 @@ class SingleProductReviewComponent extends Component
 
     public function mount()
     {
-        $this->checkProduct = Order::whereHas('products', function ($query) {
-            $query->where('product_id', $this->product->id);
-        })->where('user_id', auth()->id())
-            ->where('order_status', Order::FINISHED)->first();
+        // $this->checkProduct = Order::whereHas('products', function ($query) {
+        //     $query->where('product_id', $this->product->id);
+        // })->where('user_id', auth()->id())
+        //     ->where('order_status', Order::FINISHED)->first();
 
-        if ($this->checkProduct) {
-            $this->canRate = true;
-        }
+        // if ($this->checkProduct) {
+        //     $this->canRate = true;
+        // }
 
-        if(auth()->user()){
-            $rating = Review::active()->where('user_id', auth()->id())->where('product_id', $this->product->id)->first();
+        // if(auth()->user()){
+        //     $rating = Review::active()->where('user_id', auth()->id())->where('product_id', $this->product->id)->first();
 
-            if (!empty($rating)) {
-                $this->rating  = $rating->rating;
-                $this->content = $rating->content;
-                $this->currentRatingId = $rating->id;
-            }
-        }
+        //     if (!empty($rating)) {
+        //         $this->rating  = $rating->rating;
+        //         $this->content = $rating->content;
+        //         $this->currentRatingId = $rating->id;
+        //     }
+        // }
     }
 
     public function rules()

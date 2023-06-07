@@ -12,6 +12,7 @@ use App\Http\Controllers\Frontend\ShopController;
 use App\Http\Controllers\Frontend\ShopTagController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\WishlistController;
+use App\Http\Controllers\Backend\OrderController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,6 +28,8 @@ Route::get('/product/{slug}', [ProductController::class, 'show'])->name('product
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 Route::get('/page/{slug}', [PageController::class, 'show'])->name('page.show');
+Route::get('order/upload-orders', [OrderController::class, 'showOrderForm'])->name('upload.order');
+Route::post('order/upload-orders', [OrderController::class, 'saveOrder'])->name('save.order');
 
 // Login by social media [ Facebook - Twitter - Google ]
 Route::get('login/{provider}', [LoginController::class, 'redirectToProvider'])->name('social_login');

@@ -59,6 +59,8 @@ Route::group(['middleware' => ['roles']], function () {
     Route::resource('links', LinkController::class)->except('show');
     Route::resource('pages', PageController::class);
     Route::get('order/customer-orders', [OrderController::class, 'getCustomerOrder'])->name('customer.order');
+    Route::get('order/list/{id?}', [OrderController::class, 'getOrderList'])->name('view.orders');
+   
     
 });
 

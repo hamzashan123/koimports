@@ -51,17 +51,7 @@
                                             {{ __('Remember Me') }}
                                         </label>
                                     </div>
-                                    <div class="form-group mt-4 mb-0">
-                                        <a href="{{ route('social_login', 'facebook') }}" class="btn btn-block" style="background-color: #1877F2; color: #FFFFFF">
-                                            Login with Facebook
-                                        </a>
-{{--                                    <a href="{{ route('social_login', 'twitter') }}" class="btn btn-block" style="background-color: #1DA1F2; color: #FFFFFF">--}}
-{{--                                        Login with Twitter--}}
-{{--                                    </a>--}}
-{{--                                    <a href="{{ route('social_login', 'google') }}" class="btn btn-block" style="border-color: #1877F2; color: black">--}}
-{{--                                        Login with Google--}}
-{{--                                    </a>--}}
-                                    </div>
+                                
                                 </form>
                             </div>
                         </div>

@@ -107,8 +107,8 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-lg-12">
-                            <button class="button bg-dark text-white" type="submit">Update</button>
+                        <div class="col-lg-12 button-box">
+                            <button class="default-btn" type="submit">Update</button>
                         </div>
                     </div>
                 </form>

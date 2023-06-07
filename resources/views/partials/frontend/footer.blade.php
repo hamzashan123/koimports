@@ -1,39 +1,47 @@
 <footer class="footer-area fruits-footer">
-    <div class="food-footer-bottom pt-80 pb-70 black-bg-5">
+    <div class="food-footer-bottom pt-80 pb-70">
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-lg-4">
                     <div class="footer-widget">
                         <div class="food-about">
-                            <p>Online Shop</p>
                             <div class="food-about-info">
                                 <div class="food-info-wrapper">
                                     <div class="food-address">
                                         <div class="food-info-icon">
-                                            <i class="pe-7s-map-marker"></i>
+                                            <i class="fas fa-map-marker"></i>
                                         </div>
                                         <div class="food-info-content">
-                                            <p>Website address here</p>
+                                            <p>Unit 19, Fanton Hall, Off A127 Wickford, Essex. SS12 9JF.</p>
                                         </div>
                                     </div>
                                     <div class="food-address">
                                         <div class="food-info-icon">
-                                            <i class="pe-7s-call"></i>
+                                            <i class="fas fa-phone-alt"></i>
                                         </div>
                                         <div class="food-info-content">
-                                            <p>+966 000-000000</p>
+                                            <p>01277810870</p>
                                         </div>
                                     </div>
                                     <div class="food-address">
                                         <div class="food-info-icon">
-                                            <i class="pe-7s-chat"></i>
+                                            <i class="fas fa-envelope"></i>
                                         </div>
                                         <div class="food-info-content">
                                             <p>
-                                                <a href="https://alijumaan.com">alila3883@gmail.com</a> <br>
-                                                <a href="https://alijumaan.com" target="_blank">contact@alijumaan.com</a>
+                                                <a href="mailto:info@koimports.co.uk">info@koimports.co.uk</a> <br>
+                                        
                                             </p>
                                         </div>
+                                    </div>
+
+                                    
+
+                                    <div class="socialMedia"> 
+                                        <h6 class="footerCustomHeading">Social Links</h6>
+                                        <a href="facebook.com"> <i class="fa fa-facebook"></i> </a>
+                                        <a href="instagram.com"> <i class="fa fa-instagram"></i> </a>
+                                        <a href="linkedin.com"> <i class="fa fa-linkedin"></i> </a>
                                     </div>
                                 </div>
                             </div>
@@ -41,53 +49,85 @@
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-2">
-                    <div class="footer-widget mt-50">
-                        <h3 class="footer-widget-title-6">Options</h3>
+                    <div class="footer-widget footer-widget-2 ">
+                        <h3 class="footerCustomHeading">Office Hours </h3>
                         <div class="food-widget-content">
                             <ul>
-                                <li><a href="{{ route('cart.index') }}"><img
-                                            src="{{ asset('frontend/img/icon-img/41.png') }}" alt="hhhhhh"> Cart</a></li>
-                                <li>
-                                    <a href="{{ route('user.dashboard') }}"><img src="{{ asset('frontend/img/icon-img/41.png') }}" alt="">
-                                        My Account</a>
-                                </li>
-                                @guest
-                                    @if (route('register'))
-                                        <li>
-                                            <a href="{{ route('register') }}">
-                                                <img src="{{ asset('frontend/img/icon-img/41.png') }}" alt="">
-                                                Register
-                                            </a>
-                                        </li>
-                                    @endif
-                                @endguest
+                                <li> Monday: 9:00 - 17:00  </li>
+                                <li> Tuesday: 9:00 - 17:00  </li>
+                                <li> Wednesday: 9:00 - 17:00  </li>
+                                <li> Thursday: 9:00 - 17:00 </li>
+                                <li> Friday: 9:00 - 17:00  </li>
+                               
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="footer-widget mt-50">
-                        <h3 class="footer-widget-title-6">Information</h3>
+                <div class="col-md-6 col-lg-2">
+                    <div class="footer-widget footer-widget-3">
+                        <h3 class="footerCustomHeading">Information</h3>
                         <div class="food-widget-content">
                             <ul>
                                 <li>
-                                    <a href="{{ route('contact.index') }}">
-                                        <img src="{{ asset('frontend/img/icon-img/41.png') }}" alt="">
-                                        About
+                                 <a href="{{route('home')}}">HOME</a>
+                                </li>
+                                <li>
+                                    <a href="">ABOUT</a>
+                                </li>
+                                <li>
+                                     <a href="{{route('shop.index')}}">SHOP</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <div class="footer-widget footer-widget-4">
+                        <h3 class="footerCustomHeading">Account</h3>
+                        <div class="food-widget-content">
+                            <ul>
+                                <li>
+                                    <a href="{{ route('login') }}">
+                                        Account Login
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('contact.index') }}">
-                                        <img src="{{ asset('frontend/img/icon-img/41.png') }}" alt="">
-                                        Contact
+                                    <a href="{{ route('register') }}">
+                                        Account Registration
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('page.show', 'privacy-policy') }}">
-                                        <img src="{{ asset('frontend/img/icon-img/41.png') }}" alt="">
-                                        Privacy Policy
+                                    <a href="{{ route('upload.order') }}">
+                                        Bulk Order (CSV File)
                                     </a>
                                 </li>
+                               
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2">
+                    <div class="footer-widget footer-widget-5">
+                        <h3 class="footerCustomHeading">Store</h3>
+                        <div class="food-widget-content">
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                       Terms & Condition
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="#">
+                                       Privacy Policy
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                       FAQs
+                                    </a>
+                                </li>
+                               
                             </ul>
                         </div>
                     </div>
@@ -95,57 +135,14 @@
             </div>
         </div>
     </div>
-    <div class="footer-middle black-bg-2 pt-35 pb-40">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <div class="footer-services-wrapper mb-30">
-                        <div class="footer-services-icon">
-                            <i class="pe-7s-car"></i>
-                        </div>
-                        <div class="footer-services-content">
-                            <h3>Free Shipping</h3>
-                            <p>Free Shipping on Bangladesh</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="footer-services-wrapper mb-30">
-                        <div class="footer-services-icon">
-                            <i class="pe-7s-shield"></i>
-                        </div>
-                        <div class="footer-services-content">
-                            <h3>Money Guarentee</h3>
-                            <p>Free Shipping on Bangladesh</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="footer-services-wrapper mb-30">
-                        <div class="footer-services-icon">
-                            <i class="pe-7s-headphones"></i>
-                        </div>
-                        <div class="footer-services-content">
-                            <h3>Online Support</h3>
-                            <p>Free Shipping on Bangladesh</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center">
-                <img src="{{ asset('frontend/img/icon-img/3.png') }}" alt="">
-            </div>
-        </div>
-    </div>
-    <div class="food-copyright black-bg-6 ptb-30">
+    
+    <div class="food-copyright ptb-30">
         <div class="container text-center">
             <p class="copyright text-center">
-                ©
-                <script>
+            
+                <span >© Copyright <script>
                     document.write(new Date().getFullYear())
-                </script>
-                Created by
-                <a href="https://alialqahtani.sa" target="_blank" class="text-primary">alialqahtani.sa</a>
+                </script> KOIMPORTS LTD. All rights reserved. </span>
             </p>
         </div>
     </div>

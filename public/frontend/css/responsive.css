@@ -1637,9 +1637,9 @@
         top: 150px;
     }
 
-    .menu-hover {
+    /* .menu-hover {
         display: none;
-    }
+    } */
 
     .single-slider-book1 {
         min-height: 500px;
@@ -3152,9 +3152,9 @@
         top: 100px;
     }
 
-    .menu-hover {
+    /* .menu-hover {
         display: none;
-    }
+    } */
 
     .single-slider-book1 {
         min-height: 400px;
@@ -4346,7 +4346,7 @@
     }
 
     .mean-container a.meanmenu-reveal {
-        top: -76px;
+        top: 0;
         border: 1px solid #666;
         height: 18px;
         line-height: 1;
@@ -5154,8 +5154,8 @@
     }
 
     .mobile-menu .mean-nav ul.menu-overflow {
-        height: 215px;
-        margin-top: 10px;
+        height: 300px;
+        margin-top: 50px;
         overflow-y: auto;
     }
 

@@ -4,7 +4,7 @@
     <div class="product-details ptb-100 pb-90">
         <div class="container">
             <div class="row">
-                <div class="col-md-12 col-lg-7 col-12">
+                <div class="col-md-12 col-lg-6 col-12">
                     <div class="product-details-img-content">
                         <div class="product-details-tab mr-70">
                             @if($product->media_count)

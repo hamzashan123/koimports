@@ -85,7 +85,7 @@
 <!-- categories area end -->
 
 <!-- banner area start -->
-<div class="fruits-choose-area pb-65 bg-img mt-5" style="background-image: url('{{ asset('frontend/img/banner/53.png') }}')">
+<!-- <div class="fruits-choose-area pb-65 bg-img mt-5" style="background-image: url('{{ asset('frontend/img/banner/53.png') }}')">
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-xl-8 col-12">
@@ -126,7 +126,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- banner area end -->
 
 <!-- TRENDING PRODUCTS -->
@@ -139,7 +139,7 @@
     <div class="fruits-services-wrapper">
         <div class="single-fruits-services">
             <div class="fruits-services-img">
-                <img src="{{asset('img/logo.png')}}" alt="">
+                <img src="{{asset('img/logonew.png')}}" alt="">
             </div>
             <div class="fruits-services-content">
                 <h4>Free Shipping</h4>
@@ -149,7 +149,7 @@
         </div>
         <div class="single-fruits-services">
             <div class="fruits-services-img">
-                <img src="{{asset('img/logo.png')}}" alt="">
+                <img src="{{asset('img/logonew.png')}}" alt="">
             </div>
             <div class="fruits-services-content">
                 <h4>Money Guarentee.</h4>
@@ -159,7 +159,7 @@
         </div>
         <div class="single-fruits-services">
             <div class="fruits-services-img">
-                <img src="{{asset('img/logo.png')}}" alt="">
+                <img src="{{asset('img/logonew.png')}}" alt="">
             </div>
             <div class="fruits-services-content">
                 <h4>Online Support</h4>
@@ -170,5 +170,14 @@
     </div>
 </div>
 <!-- services area end -->
+
+<script>
+  
+  new Splide('.splide', {
+	type: 'loop',
+    autoplay: 'pause',
+}).mount();
+
+</script>
 @endsection
 

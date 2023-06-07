@@ -45,17 +45,17 @@ class ProductRequest extends FormRequest
             {
                 return [
                     'name' => ['required', 'max:255'],
-                    'description' => ['required', 'max:1000'],
+                    //'description' => ['required', 'max:1000'],
                     'price' => ['required', 'numeric'],
-                    'quantity' => ['required', 'numeric'],
+                    //'quantity' => ['required', 'numeric'],
                     'category_id' => ['required'],
-                    'tags.*' => ['required'],
-                    'featured' => ['required'],
-                    'details' => ['required', 'max:10000'],
-                    'review_able' => ['nullable'],
+                   // 'tags.*' => ['required'],
+                   // 'featured' => ['required'],
+                    //'details' => ['required', 'max:10000'],
+                    //'review_able' => ['nullable'],
                     'status' => ['required'],
-                    'images' => ['nullable'],
-                    'images.*' => ['mimes:jpg,jpeg,png,gif', 'max:3000']
+                    //'images' => ['nullable'],
+                    //'images.*' => ['mimes:jpg,jpeg,png,gif', 'max:3000']
                 ];
             }
             default: break;

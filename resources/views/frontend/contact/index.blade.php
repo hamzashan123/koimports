@@ -50,7 +50,7 @@
                                         <textarea name="message" placeholder="Your message">{{ old('message') }}</textarea>
                                         @error('message')<span class="text-danger">{{ $message }}</span>@enderror
                                     </div>
-                                    <button class="submit contact-btn btn-hover">
+                                    <button class="submit btn-dark" style="padding: 10px 20px;">
                                         <i class="far fa-envelope"></i> Send
                                     </button>
                                 </div>
@@ -73,7 +73,7 @@
                                 <i class="fas fa-map-marker-alt"></i>
                             </div>
                             <div class="contact-info-text">
-                                <p><span>Address:</span> {!! getSettingsOf('address') !!}</p>
+                                <p><span>Address:</span> Unit 19, Fanton Hall, Off A127 Wickford, Essex. SS12 9JF. </p>
                             </div>
                         </div>
                         <div class="single-contact-info">
@@ -81,7 +81,7 @@
                                 <i class="far fa-envelope"></i>
                             </div>
                             <div class="contact-info-text">
-                                <p><span>Email: </span> {!! getSettingsOf('site_email') !!}</p>
+                                <p><span>Email: </span> Info@koimports.co.uk </p>
                             </div>
                         </div>
                         <div class="single-contact-info">
@@ -89,7 +89,7 @@
                                 <i class="fas fa-phone"></i>
                             </div>
                             <div class="contact-info-text">
-                                <p><span>Phone: </span> {!! getSettingsOf('phone_number') !!}</p>
+                                <p><span>Phone: </span> 07894 630722 </p>
                             </div>
                         </div>
                     </div>

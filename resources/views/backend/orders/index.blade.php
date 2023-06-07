@@ -11,7 +11,7 @@
             </div>
         </div>
 
-        @include('backend.orders.filter')
+        <!-- @include('backend.orders.filter') -->
 
         <div class="table-responsive">
             <table class="table table-hover">

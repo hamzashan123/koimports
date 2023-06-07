@@ -1,7 +1,7 @@
 <div wire:ignore id="all-products" class="product-style-area pt-130 pb-30 wow fadeInUp">
     <div class="section-title-furits text-center mb-95">
         <img src="{{ asset('frontend/img/icon-img/49.png') }}" alt="">
-        <h2>TOP TRENDING PRODUCTS</h2>
+        <h2>Top Products</h2>
     </div>
     <div class="container">
         <div class="row">
@@ -9,12 +9,9 @@
                 <div class="col-lg-4 col-xl-3 col-md-6">
                     <div class="product-fruit-wrapper mb-60">
                         <div class="product-fruit-img">
-                            @if($product->firstMedia)
-                                <img src="{{ asset('storage/images/products/' . $product->firstMedia->file_name ) }}"
-                                     alt="{{ $product->name }}">
-                            @else
-                                <img src="{{ asset('img/cartwhite.png' ) }}" alt="">
-                            @endif
+                            
+                            <img src="{{ $product->product_import_url }}" alt="">
+
                             <div class="product-furit-action">
                                 <a wire:click.prevent="addToCart('{{ $product->id }}')"
                                    class="furit-animate-left" title="Add To Cart">
@@ -30,7 +27,11 @@
                             <h4>
                                 <a href="{{route('product.show', $product->slug)}}">{{ $product->name }}</a>
                             </h4>
-                            <span>${{ $product->price }}</span>
+                            @if(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'premium')
+                                            <span>${{ $product->premium_price }}</span>
+                                        @elseif(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'general')
+                                            <span>${{ $product->price }}</span>
+                                        @endif
                         </div>
                     </div>
                 </div>

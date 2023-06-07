@@ -82,7 +82,7 @@
         --}}
 
         <!-- Supervisor link -->
-        @can('access_link')
+        <!-- @can('access_link')
             <li class="nav-item">
                 <a class="nav-link text-dark" href="{{ route('admin.links.index') }}">Links</a>
             </li>
@@ -97,7 +97,7 @@
                 <a class="nav-link" href="{{ route('admin.settings.index') }}">
                     <span>Settings</span></a>
             </li>
-        @endcan
+        @endcan -->
 
         <div class="topbar-divider d-none d-sm-block"></div>
 

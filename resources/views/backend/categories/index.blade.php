@@ -17,7 +17,7 @@
                 @endcan
             </div>
         </div>
-        @include('partials.backend.filter', ['model' => route('admin.categories.index')])
+        <!-- @include('partials.backend.filter', ['model' => route('admin.categories.index')]) -->
         <div class="table-responsive">
             <table class="table table-hover">
                 <thead>
@@ -25,7 +25,7 @@
                     <th>ID</th>
                     <th>Image</th>
                     <th>Name</th>
-                    <th>Product count</th>
+                    <!-- <th>Product count</th> -->
                     <th>Parent</th>
                     <th>Status</th>
                     <th>Created at</th>
@@ -48,7 +48,7 @@
                                 {{ $category->name }}
                             </a>
                         </td>
-                        <td>{{ $category->products_count }}</td>
+                        <!-- <td>{{ $category->products_count }}</td> -->
                         <td>{{ $category->parent->name ?? '' }}</td>
                         <td>{{ $category->status }}</td>
                         <td>{{ $category->created_at }}</td>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Imports\OrdersImport;
 use App\Models\Order;
+use App\Models\OrderProduct;
 use App\Models\OrderTransaction;
 use App\Models\User;
 use App\Notifications\Frontend\User\OrderStatusNotification;
@@ -11,6 +13,8 @@ use App\Services\OmnipayService;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Maatwebsite\Excel\Facades\Excel;
 
 class OrderController extends Controller
 {
@@ -31,9 +35,34 @@ class OrderController extends Controller
         return view('backend.orders.index', compact('orders'));
     }
 
+    public function showOrderForm(){
+        return view('backend.orders.orderform');
+    }
+
     public function getCustomerOrder(){
         $orders = Order::all();
         return view('backend.orders.customer-orders', compact('orders'));
+    }
+
+    public function getOrderList(int $order_id){
+
+        $data = OrderProduct::where('order_id', $order_id)->get();
+        return view('backend.orders.orderList', compact('data'));
+
+    }
+
+    public function saveOrder(Request $request){
+        
+        $orderId = DB::table('orders')->insertGetId([
+            'user_first_name' => $request->first_name,
+            'user_last_name' => $request->first_name,
+            'company' => $request->company_name,
+            'phone' => $request->phone,
+        ]);
+
+        Excel::import(new OrdersImport($orderId),request()->file('order_csv'));
+
+        return redirect()->back()->with('success','Order Uploaded Successfully!');
     }
 
     public function show(Order $order): View
