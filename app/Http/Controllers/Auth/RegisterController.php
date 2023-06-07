@@ -3,10 +3,12 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\UserSignUp;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -67,17 +69,28 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+       
         $user = User::create([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'username' => $data['username'],
             'email' => $data['email'],
             'phone' => $data['phone'],
-            'password' => Hash::make($data['password'])
+            'password' => Hash::make($data['password']),
+            'status' => false
         ]);
 
         $user->assignRole('user');
 
+        $userdata = [
+            'firstname' => $user->first_name,
+            'lastname' => $user->last_name,
+            'username' => $user->username,
+            'email' => $user->email,
+            'subject' => 'Your application has been submitted ',
+            'msg' => 'You have successfully registered to koimports.com ltd. Your Account is Under Reviewed. As soon as it will active you will receive an updates through Email.'
+        ];
+        Mail::to($user->email)->send(new UserSignUp($userdata));
         return $user;
     }
 }

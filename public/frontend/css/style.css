@@ -10070,13 +10070,22 @@ a.headingCategoryName {
 }
 
 
+
+
 @media only screen and (max-width:768px) {
 
     .logo-2 {
         width: 80% !important;
         display: inline-block;
     }
+
+    .delivery-quality-experience {
+        padding: 30px !important;
+    }
     
+    .delivery-quality-experience p {
+        width: 100% !important;
+    }
     
     
     .header-bottom-wrapper .row {
