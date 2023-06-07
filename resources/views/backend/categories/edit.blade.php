@@ -75,7 +75,7 @@
                             @endif
                             <br>
                             <input type="file" name="cover">
-                            <span class="form-text text-muted">Image width should be 500px x 500px</span>
+                            <!-- <span class="form-text text-muted">Image width should be 500px x 500px</span> -->
                             @error('cover')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
