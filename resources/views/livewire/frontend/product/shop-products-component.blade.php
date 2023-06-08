@@ -61,9 +61,9 @@
                                             <a href="{{route('product.show', $product->slug)}}">{{ $product->name }}</a>
                                         </h4>
                                         @if(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'premium')
-                                            <span>${{ $product->premium_price }}</span>
+                                            <span>£{{ $product->premium_price }}</span>
                                         @elseif(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'general')
-                                            <span>${{ $product->price }}</span>
+                                            <span>£{{ $product->price }}</span>
                                         @endif
                                         <!-- <div>
                                             @if($product->tags->count() > 0)
@@ -110,9 +110,9 @@
                                             </h4>
 
                                             @if(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'premium')
-                                                <span>${{ $product->premium_price }}</span>
+                                                <span>£{{ $product->premium_price }}</span>
                                             @elseif(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'general')
-                                                <span>${{ $product->price }}</span>
+                                                <span>£{{ $product->price }}</span>
                                             @endif
                                             
                                             <!-- @if($product->tags->count() > 0)

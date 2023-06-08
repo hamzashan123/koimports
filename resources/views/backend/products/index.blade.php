@@ -79,8 +79,8 @@
                         <td>{{ $product->category ? $product->category->name : NULL }}</td>
                         <!-- <td>{{ $product->featured }}</td> -->
                         <!-- <td>{{ $product->quantity }}</td> -->
-                        <td>{{ $product->price }}</td>
-                        <td>{{ $product->premium_price }}</td>
+                        <td>£{{ $product->price }}</td>
+                        <td>£{{ $product->premium_price }}</td>
                         <!-- <td class="text-danger">{{ $product->tags->pluck('name')->join(', ') }}</td> -->
                         
                         <!-- <td>{{ $product->status }}</td>

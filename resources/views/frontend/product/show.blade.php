@@ -50,7 +50,7 @@
                 <div class="col-md-12 col-lg-5 col-12">
                     <div class="product-details-content">
                         <h3>{{ $product->name }}</h3>
-                        <div class="rating-number">
+                        <!-- <div class="rating-number">
                             <div class="quick-view-number">
                                 <span class="score">
                                     <div class="score-wrap">
@@ -69,12 +69,12 @@
                                 </span>
                                 <span>{{ $product->approved_reviews_count }} Ratting (S)</span>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="details-price">
                                         @if(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'premium')
-                                            <span>${{ $product->premium_price }}</span>
+                                            <span>£{{ $product->premium_price }}</span>
                                         @elseif(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'general')
-                                            <span>${{ $product->price }}</span>
+                                            <span>£{{ $product->price }}</span>
                                         @endif
                             
                         </div>

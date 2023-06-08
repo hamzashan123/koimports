@@ -92,7 +92,7 @@ class RegisterController extends Controller
             'username' => $user->username,
             'email' => $user->email,
             'subject' => 'Registration Successful',
-            'msg' => 'You have successfully registered to koimports.com ltd. Your Account is Under Reviewed. As soon as it will active you will receive an updates through Email.'
+            'msg' => 'You have successfully registered to koimports.co.uk . Your Account is Under Reviewed. As soon as it will active you will receive an updates through Email.'
         ];
 
         try {
@@ -107,8 +107,8 @@ class RegisterController extends Controller
             'lastname' => $user->last_name,
             'username' => $user->username,
             'email' => $user->email,
-            'subject' => 'KoImports User Registration',
-            'msg' => 'A new user registered into koimports.com ltd. Please check the admin and change status to active also assign customer type.'
+            'subject' => 'KOImports User Registration',
+            'msg' => 'A new user registered into koimports.co.uk . Please check the admin and change status to active also assign customer type.'
         ];
 
         try {

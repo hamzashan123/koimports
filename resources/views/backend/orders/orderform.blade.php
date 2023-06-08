@@ -29,7 +29,7 @@
                 <li> 1) Download the CSV File Template  </li>
                 <li> 2) Add your order to the CSV File - you will need your account number, item codes, and item quantities.</li>
                 <li> 3) Save your file</li>
-                <li> 4) Upload to JNK Website - Find and select the correct CSV file for your order</li>
+                <li> 4) Upload to KOIMPORTS LTD Website - Find and select the correct CSV file for your order</li>
             </ul>
 
 

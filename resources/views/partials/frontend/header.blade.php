@@ -64,7 +64,7 @@
                                 <ul class="menu-overflow">
                                     <li><a href="{{route('home')}}">HOME</a></li>
                                     <li><a href="{{route('aboutus')}}">ABOUT</a></li>
-                                    <li><a href="{{route('shop.index')}}">SHOP</a></li>
+                                    <li><a href="{{route('shop.index')}}">PRODUCTS</a></li>
 
                                     <li><a href="#">Ponds</a>
                                         <ul>
@@ -147,7 +147,7 @@
                             </li>
                             <li>
                                 <a href="{{route('shop.index')}}">
-                                    Shop
+                                Products
                                 </a>
                             </li>
                            

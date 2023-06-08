@@ -38,7 +38,7 @@ class TopTrendingProducts extends Component
     public function render()
     {
         return view('livewire.frontend.product.top-trending-products', [
-            'products' => Product::select('id', 'slug', 'name', 'price','product_import_url')
+            'products' => Product::select('id', 'slug', 'name', 'price','premium_price','product_import_url')
                 ->with('firstMedia')
                 ->inRandomOrder()
                 ->featured()
