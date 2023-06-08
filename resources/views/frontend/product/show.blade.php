@@ -70,17 +70,23 @@
                                 <span>{{ $product->approved_reviews_count }} Ratting (S)</span>
                             </div>
                         </div> -->
+                        @if(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'premium')
                         <div class="details-price">
-                                        @if(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'premium')
-                                            <span>£{{ $product->premium_price }}</span>
-                                        @elseif(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'general')
-                                            <span>£{{ $product->price }}</span>
-                                        @endif
+                            <span>£{{ $product->premium_price }}</span>
+                        </div>           
+                        
+                        @elseif(!empty(Auth::user()->customer_type) && Auth::user()->customer_type == 'general')
+                        <div class="details-price">
+                        <span>£{{ $product->price }}</span>
+                        </div> 
+                       
+                                        
                             
-                        </div>
-                        <p>{{ $product->description }}</p>
-                        <livewire:frontend.product.single-product-cart-component :product="$product"/>
-                        <div class="product-details-cati-tag mt-35">
+                        
+                        @endif
+                        <!-- <p>{{ $product->description }}</p> -->
+                      
+                        <div class="product-details-cati-tag ">
                             <ul>
                                 <li class="categories-title">Category :</li>
                                 <li><a href="{{ route('shop.index', $product->category->slug) }}">{{ $product->category->name }}</a></li>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use App\Imports\OrdersImport;
+use App\Mail\bulkOrderEmail;
 use App\Models\Order;
 use App\Models\OrderProduct;
 use App\Models\OrderTransaction;
@@ -14,6 +15,7 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Maatwebsite\Excel\Facades\Excel;
 
 class OrderController extends Controller
@@ -55,12 +57,31 @@ class OrderController extends Controller
         
         $orderId = DB::table('orders')->insertGetId([
             'user_first_name' => $request->first_name,
-            'user_last_name' => $request->first_name,
+            'user_last_name' => $request->last_name,
             'company' => $request->company_name,
             'phone' => $request->phone,
         ]);
 
         Excel::import(new OrdersImport($orderId),request()->file('order_csv'));
+
+        $admindata = [
+            'admin' => true,
+            'firstname' => $request->first_name,
+            'lastname' => $request->last_name,
+            'companyname' => $request->company_name,
+            'phone' => $request->phone,
+            'url' => request()->file('order_csv'),
+            'subject' => 'New Order Recieved',
+            'msg' => 'A new order has been recieved please check dashboard.'
+        ];
+
+        try {
+            
+            $adminemail = User::role('admin')->first();
+            Mail::to($adminemail->email)->send(new bulkOrderEmail($admindata));
+        } catch (\Exception $e) {
+          
+        }
 
         return redirect()->back()->with('success','Order Uploaded Successfully!');
     }
