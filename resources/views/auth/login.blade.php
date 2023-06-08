@@ -20,6 +20,9 @@
                     <div class="login">
                         <div class="login-form-container">
                             <div class="form-group">
+                                @if(Session::has('inactive'))
+                                    <p class="alert alert-danger">{{ Session::get('inactive') }}</p>
+                                @endif
                                 <form action="{{ route('login') }}" method="POST">
                                     @csrf
                                     <div class="mb-4">
