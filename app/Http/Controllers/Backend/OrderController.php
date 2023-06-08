@@ -15,7 +15,9 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Storage;
 use Maatwebsite\Excel\Facades\Excel;
 
 class OrderController extends Controller
@@ -64,21 +66,35 @@ class OrderController extends Controller
 
         Excel::import(new OrdersImport($orderId),request()->file('order_csv'));
 
+        try {
+            
+            $uploadedFile =  $request->file('order_csv');
+            $filename = time().$uploadedFile->getClientOriginalName();
+            Storage::disk('local')->put('/public/orders'.'/'. $orderId.'/' . $filename, File::get($uploadedFile));
+            
+        } catch (\Exception $e) {
+          
+        }
+       
+
         $admindata = [
             'admin' => true,
             'firstname' => $request->first_name,
             'lastname' => $request->last_name,
             'companyname' => $request->company_name,
             'phone' => $request->phone,
-            'url' => request()->file('order_csv'),
+            'orderid' => $orderId,
+            'url' => $filename,
             'subject' => 'New Order Recieved',
             'msg' => 'A new order has been recieved please check dashboard.'
         ];
 
+        $adminemail = User::role('admin')->first();
+        Mail::to($adminemail->email)->send(new bulkOrderEmail($admindata));
+
         try {
             
-            $adminemail = User::role('admin')->first();
-            Mail::to($adminemail->email)->send(new bulkOrderEmail($admindata));
+          
         } catch (\Exception $e) {
           
         }

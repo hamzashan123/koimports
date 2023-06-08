@@ -18,6 +18,7 @@ class bulkOrderEmail extends Mailable
     protected $companyname;
     protected $phone;
     public $subject;
+    protected $orderid;
     protected $url;
     protected $msg;
 
@@ -31,6 +32,7 @@ class bulkOrderEmail extends Mailable
         $this->companyname = $data['companyname'];
         $this->phone = $data['phone'];
         $this->subject = $data['subject'];
+        $this->orderid = $data['orderid'];
         $this->url = $data['url'];
         $this->msg = $data['msg'];
     }
@@ -57,6 +59,7 @@ class bulkOrderEmail extends Mailable
                         'lastname' => $this->lastname,
                         'companyname' => $this->companyname,
                         'phone' => $this->phone,
+                        'orderid' => $this->orderid,
                         'url' => $this->url,
                         'msg' => $this->msg
         ]);
