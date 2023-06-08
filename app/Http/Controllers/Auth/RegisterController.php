@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
@@ -32,7 +33,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/register';
 
     /**
      * Create a new controller instance.
@@ -97,6 +98,7 @@ class RegisterController extends Controller
 
         try {
             Mail::to($user->email)->send(new UserSignUp($userdata));
+            Session::flash('success', 'Registration Successfull!'); 
         } catch (\Exception $e) {
           
         }

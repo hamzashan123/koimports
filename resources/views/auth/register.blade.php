@@ -21,6 +21,9 @@
                     <div class="login">
                         <div class="login-form-container">
                             <div class="form-group">
+                                @if(Session::has('success'))
+                                    <p class="alert alert-success">{{ Session::get('success') }}</p>
+                                @endif
                                 <form method="POST" action="{{ route('register') }}">
                                     @csrf
                                     <div class="row">

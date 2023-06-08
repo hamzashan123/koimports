@@ -39,6 +39,7 @@
 
 
                 </p>
+
                 <form action="{{ route('save.order') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                     @csrf
                     
@@ -99,6 +100,10 @@
                     </div>
 
                 </form>
+
+                @if(Session::has('success'))
+                    <p class="alert alert-success">{{ Session::get('success') }}</p>
+                @endif
           
             
         </div>
