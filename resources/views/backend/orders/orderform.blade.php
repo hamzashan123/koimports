@@ -16,7 +16,7 @@
             <p>
                     It is now possible to place your order via CSV File.
             </p>
-            <a style=" text-decoration: underline;" download="SampleOrderCsv" href="{{ Storage::url('csv_sample.csv') }}" title="MyPdf">Download CSV Bulk Order Template</a>
+            <a style=" text-decoration: underline;" download="SampleOrderCsv" href="{{ asset('csv_sample.csv') }}" title="MyPdf">Download CSV Bulk Order Template</a>
             
                    
 
