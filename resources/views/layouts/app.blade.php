@@ -72,8 +72,10 @@
                 } 
             });
             }
+
+            
     </script>
-  
+                
     <script>
         $(document).ready(function() {
             let bloodhound = new Bloodhound({

@@ -11,9 +11,9 @@
             <div class="productForm">
             <form action="{{ route('admin.products.import') }}" method="POST" enctype="multipart/form-data" class="importProductsForm">
                         @csrf
-                        <input type="file" name="file" class="form-control fileUpload">
+                        <input type="file" name="file"  id="FileUploadControl" class="form-control fileUpload" required>
                         <br>
-                        <button class="btn btn-primary">Import Products</button>
+                        <button class="btn btn-primary" id="importproductbtn" >Import Products</button>
             </form>
             </div>
             <!-- <div class="ml-auto"> -->
