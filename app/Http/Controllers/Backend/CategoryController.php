@@ -28,7 +28,7 @@ class CategoryController extends Controller
             })
             ->orderBy(\request()->sortBy ?? 'id', \request()->orderBy ?? 'asc')
             ->paginate(\request()->limitBy ?? 10);
-
+            
         return view('backend.categories.index', compact('categories'));
     }
 

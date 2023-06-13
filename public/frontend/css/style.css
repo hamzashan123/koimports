@@ -6784,7 +6784,8 @@ h1.cart-heading {
     width: 130px;
 }
 thead {
-    background-color: #00b9b033;
+    background-color: #050035;
+    color:white;
 }
 .coupon input {
     background-color: transparent;

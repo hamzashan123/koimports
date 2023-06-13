@@ -19,7 +19,7 @@ class HomeController extends Controller
         $categories = Category::select('slug', 'cover', 'name')
             ->active()
             ->get();
-
+        
         return view('frontend.index', compact('categories', 'coupon'));
     }
 
@@ -45,9 +45,13 @@ class HomeController extends Controller
         return view('frontend.pages.termofservice');
     }
 
-    public function privacypolicy(){
+    public function delivery(){
 
-        return view('frontend.pages.privacypolicy');
+        return view('frontend.pages.delivery');
+    }
+
+    public function goodreturn(){
+        return view('frontend.pages.goodreturn');
     }
 
     public function faqs(){

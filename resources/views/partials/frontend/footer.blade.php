@@ -20,7 +20,7 @@
                                             <i class="fas fa-phone-alt"></i>
                                         </div>
                                         <div class="food-info-content">
-                                            <p>01277810870</p>
+                                            <p>01277 810870</p>
                                         </div>
                                     </div>
                                     <div class="food-address">
@@ -37,12 +37,12 @@
 
                                     
 
-                                    <div class="socialMedia"> 
+                                    <!-- <div class="socialMedia"> 
                                         <h6 class="footerCustomHeading">Social Links</h6>
                                         <a href="facebook.com"> <i class="fa fa-facebook"></i> </a>
                                         <a href="instagram.com"> <i class="fa fa-instagram"></i> </a>
                                         <a href="linkedin.com"> <i class="fa fa-linkedin"></i> </a>
-                                    </div>
+                                    </div> -->
                                 </div>
                             </div>
                         </div>
@@ -118,8 +118,14 @@
                                 </li>
 
                                 <li>
-                                    <a href="{{route('privacypolicy')}}">
-                                       Privacy Policy
+                                    <a href="{{route('delivery')}}">
+                                       Delivery
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{route('goodreturn')}}">
+                                       Goods Return Form
                                     </a>
                                 </li>
                                 <li>

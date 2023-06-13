@@ -1,7 +1,7 @@
 <div class="header-top-new">
     <div class="contact-header-top">
         <ul>
-            <li><a href="tel:07894 630722"> <i class="fas fa-phone-alt"></i> 07894 630722 </a></li>
+            <li><a href="tel:01277 810870"> <i class="fas fa-phone-alt"></i> 01277 810870 </a></li>
             <li><a href="mailto:info@koimports.co.uk"> <i class="fas fa-envelope"></i> Info@koimports.co.uk</a></li>
             <li><a> <i class="fas fa-map-marker"></i> Unit 19, Fanton Hall, Off A127 Wickford, Essex. SS12 9JF. </a></li>
 
@@ -66,7 +66,7 @@
                                     <li><a href="{{route('aboutus')}}">ABOUT</a></li>
                                     <li><a href="{{route('shop.index')}}">PRODUCTS</a></li>
 
-                                    <li><a href="#">Ponds</a>
+                                    <!-- <li><a href="#">Ponds</a>
                                         <ul>
                                             <li>
                                             @foreach($shop_categories_menu as $global_category)
@@ -77,7 +77,7 @@
                                                 </li>
                                             @endforeach
                                         </ul>
-                                    </li>
+                                    </li> -->
                                     <li><a href="{{route('contact.index')}}">contact</a></li>
                                     @guest
                                         <li>
@@ -118,6 +118,10 @@
                                     placeholder="Search for product...">
                             </div>
                         </form>
+                    </div>
+
+                    <div class=" button-box">
+                        <a href="{{route('register')}}" class="default-btn" >Register for trade account today</a>            
                     </div>
                     <div class="furniture-wishlist">
                         <livewire:frontend.header.wishlist-component />
@@ -169,7 +173,7 @@
                                     <a href="{{route('cart.index')}}">Cart page</a>
                                 </li>
                             </ul>
-                            <li class="dropdown">
+                            <!-- <li class="dropdown">
                                 <a href="javascript:void(0);">Ponds</a>
                                 
                                  <div class="dropdown-list"> 
@@ -199,7 +203,7 @@
                                             </ul>
                                     @endforeach
                                 </div>
-                            </li>
+                            </li> -->
                             
                             <li>
                                 <a href="{{route('contact.index')}}">Contact</a>

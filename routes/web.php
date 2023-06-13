@@ -33,7 +33,9 @@ Route::post('order/upload-orders', [OrderController::class, 'saveOrder'])->name(
 
 Route::get('/about', [HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/termofservice', [HomeController::class, 'termofservice'])->name('termofservice');
-Route::get('/privacy-policy', [HomeController::class, 'privacypolicy'])->name('privacypolicy');
+Route::get('/delivery', [HomeController::class, 'delivery'])->name('delivery');
+Route::get('/goodreturn', [HomeController::class, 'goodreturn'])->name('goodreturn');
+Route::post('/products-return', [ProductController::class, 'productsReturn'])->name('products.return');
 Route::get('/faqs', [HomeController::class, 'faqs'])->name('faqs');
 
 // Login by social media [ Facebook - Twitter - Google ]

@@ -99,7 +99,7 @@ class ShopProductsComponent extends Component
             ->hasQuantity()
             ->orderBy($sortField, $sortType)
             ->paginate($this->paginationLimit);
-       // dd($products);
+       //dd($products);
         return view('livewire.frontend.product.shop-products-component', compact('products'));
     }
 }
