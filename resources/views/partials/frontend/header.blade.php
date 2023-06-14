@@ -120,9 +120,7 @@
                         </form>
                     </div>
 
-                    <div class=" button-box">
-                        <a href="{{route('register')}}" class="default-btn" >Register for trade account today</a>            
-                    </div>
+                    
                     <div class="furniture-wishlist">
                         <livewire:frontend.header.wishlist-component />
                         <li><a href="#"></a></li>
@@ -133,7 +131,9 @@
               
              
                 </div>
-            
+                <div class="button-box">
+                        <a href="{{route('register')}}" class="default-btn" >Register for trade account today</a>            
+                </div>
         </div>
     </div>
 </header>

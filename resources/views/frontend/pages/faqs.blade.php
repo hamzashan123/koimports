@@ -2,8 +2,7 @@
 @section('title', "FAQs")
 
 <style>
-
-.myaccordion {
+.accordion {
   background-color: #eee;
   color: #444;
   cursor: pointer;
@@ -16,11 +15,11 @@
   transition: 0.4s;
 }
 
-.myactive, .myaccordion:hover {
+.active, .accordion:hover {
   background-color: #ccc;
 }
 
-.myaccordion:after {
+.accordion:after {
   content: '\002B';
   color: #777;
   font-weight: bold;
@@ -28,132 +27,91 @@
   margin-left: 5px;
 }
 
-.myAccordion-active:after {
+.active:after {
   content: "\2212";
 }
 
-.shop-filter-child {
+.panel {
   padding: 0 18px;
+  background-color: white;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
 }
-    </style>
+
+.panel.acordianshow {
+    overflow: auto !important;
+    height: 100% !important;
+    max-height: 10vh !important;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.panel.acordianshow p {
+    font-size: 18px;
+    line-height: 25px;
+}
+</style>
+
 @section('content')
     <div class="container mt-5 mb-5" style="border: none;">
-        
+        <div class="col-md-8 faqs" style="margin: 0 auto;">     
             <div>
                 <h3 class="text-center font-weight-bold">FAQs</h3>
 
-                <div class="py-2 px-4 bg-white text-black mb-3 parent-list-sidebar myaccordion">
-                    <strong class="small text-uppercase font-weight-bold">
-                        <a class="text-decoration-none text-white" >
-                        1.	How Do I Open an Account? 
-                        </a>
-                    </strong>
+                <button class="accordion"> 1.	How Do I Open an Account? </button>
+                <div class="panel">
+                <p>If you’d like to set up an account with us, please register via the Apply for a Trade Account Register </p>
                 </div>
-                <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal shop-filter-child">
-                    
-                        <li class="mb-2">
-                            <a class="reset-anchor" >
-                            If you’d like to set up an account with us, please register via the Apply for a Trade Account Register 
-                            </a>
-                        </li>
-                    
-                </ul>
 
-                <div class="py-2 px-4 bg-white text-black mb-3 parent-list-sidebar myaccordion">
-                    <strong class="small text-uppercase font-weight-bold">
-                        <a class="text-decoration-none text-white" >
-                        2.	Does KO Imports Sell To the Public? 
-                        </a>
-                    </strong>
+                <button class="accordion"> 2.	Does KO Imports Sell To the Public? </button>
+                <div class="panel">
+                <p> KO Imports is a wholesaler and deals only with trade customers. We do not sell directly to the public.</p>
                 </div>
-                <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal shop-filter-child">
-                    
-                        <li class="mb-2">
-                            <a class="reset-anchor">
-                            KO Imports is a wholesaler and deals only with trade customers. We do not sell directly to the public.
-                            </a>
-                        </li>
-                    
-                </ul>
 
-
-                <div class="py-2 px-4 bg-white text-black mb-3 parent-list-sidebar myaccordion">
-                    <strong class="small text-uppercase font-weight-bold">
-                        <a class="text-decoration-none text-white" >
-                        3.	Is there a minimum order value?  
-                        </a>
-                    </strong>
+                <button class="accordion">3.  Is there a minimum order value?  </button>
+                <div class="panel">
+                <p> We have a minimum order value of £100.</p>
                 </div>
-                <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal shop-filter-child">
-                    
-                        <li class="mb-2">
-                            <a class="reset-anchor">
-                            We have a minimum order value of £100.
-                            </a>
-                        </li>
-                    
-                </ul>
 
-
-                <div class="py-2 px-4 bg-white text-black mb-3 parent-list-sidebar myaccordion">
-                    <strong class="small text-uppercase font-weight-bold">
-                        <a class="text-decoration-none text-white" >
-                        4.	How Long Does Delivery Take?
-                        </a>
-                    </strong>
+                <button class="accordion">4.	How Long Does Delivery Take? </button>
+                <div class="panel">
+                <p> Please Check the Delivery Tab.</p>
                 </div>
-                <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal shop-filter-child">
-                    
-                        <li class="mb-2">
-                            <a class="reset-anchor">
-                            Please Check the Delivery Tab
-                            </a>
-                        </li>
-                    
-                </ul>
 
-
-                <div class="py-2 px-4 bg-white text-black mb-3 parent-list-sidebar myaccordion">
-                    <strong class="small text-uppercase font-weight-bold">
-                        <a class="text-decoration-none text-white" >
-                        5.	How Do I return something?
-                        </a>
-                    </strong>
+                <button class="accordion">5.	How Do I return something?  </button>
+                <div class="panel">
+                <p>  Please Check the return form tab.</p>
                 </div>
-                <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal shop-filter-child">
-                    
-                        <li class="mb-2">
-                            <a class="reset-anchor">
-                            Please Check the return form tab
-                            </a>
-                        </li>
-                    
-                </ul>
 
-                <div class="py-2 px-4 bg-white text-black mb-3 parent-list-sidebar myaccordion">
-                    <strong class="small text-uppercase font-weight-bold">
-                        <a class="text-decoration-none text-white" >
-                        6.	Will I receive a credit account?
-                        </a>
-                    </strong>
+                <button class="accordion"> 6.	Will I receive a credit account?  </button>
+                <div class="panel">
+                <p>   All accounts will be on a proforma basis, credit accounts are issued at the discretion of KO Imports .</p>
                 </div>
-                <ul class="list-unstyled small text-muted pl-lg-4 font-weight-normal shop-filter-child">
-                    
-                        <li class="mb-2">
-                            <a class="reset-anchor">
-                            All accounts will be on a proforma basis, credit accounts are issued at the discretion of KO Imports 
-                            </a>
-                        </li>
-                    
-                </ul>
-
+              
 
 
             </div>
-            
-        </div>
+        </div>    
+    </div>
     
+    <script>
+            var acc = document.getElementsByClassName("accordion");
+            var i;
+
+            for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                panel.classList.add('acordianshow');
+                } else {
+                    panel.classList.add('acordianshow');
+                } 
+            });
+            }
+    </script>
+
 @endsection

@@ -72,7 +72,7 @@ class ProductController extends Controller
             'invoice_number' => $request->invoice_number,
             'return_type' => $request->return_type,
             'subject' => 'New Order Recieved',
-            'msg' => 'A new product return request is recieved below are the products details.'
+            'msg' => 'A new product return request is received below are the products details.'
         ];
 
         $adminemail = User::role('admin')->first();
