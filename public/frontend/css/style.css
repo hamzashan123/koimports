@@ -1400,7 +1400,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 .header-bottom-wrapper {
     display: flex;
-    /* justify-content: space-between; */
+    justify-content: space-between;
+    align-items: center;
 }
 .header-cart-2 {
     position: relative;
@@ -10068,6 +10069,19 @@ a.headingCategoryName {
 .menu-style-2.handicraft-menu nav > ul > li > a {
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.button-box.registertrade .default-btn {
+    background: #050035;
+    border: none !important;
+    color: white;
+    font-size: 14px;
+    line-height: 1;
+    margin-top: 25px;
+    padding: 12px 36px 10px;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    border-radius: 30px;
 }
 
 

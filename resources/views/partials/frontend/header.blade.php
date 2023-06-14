@@ -131,8 +131,8 @@
               
              
                 </div>
-                <div class="button-box">
-                        <a href="{{route('register')}}" class="default-btn" >Register for trade account today</a>            
+                <div class="button-box registertrade">
+                        <a href="{{route('register')}}" class="default-btn " >Register for trade account today</a>            
                 </div>
         </div>
     </div>
