@@ -76,7 +76,7 @@
                             @endif
                         </td>
                         <td>{{ $product->code }}</td>
-                        <td>{{ $product->name }}</td>
+                        <td>{!! $product->name !!}</td>
                         <td>{{ $product->category ? $product->category->name : NULL }}</td>
                         <td>{{ $product->subCategory ? $product->subCategory->name : NULL }}</td>
                         <!-- <td>{{ $product->featured }}</td> -->
