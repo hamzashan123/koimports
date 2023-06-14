@@ -4457,13 +4457,13 @@ a.icon-cart-furniture span.green {
 .menu-style-2.furniture-menu nav > ul > li > a {
     padding: 38px 0;
 }
-.furniture-bottom-wrapper {
+/* .furniture-bottom-wrapper {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 80%;
     margin-left: 5%;
-}
+} */
 .furniture-login ul li {
     color: #999999;
     display: inline-block;
@@ -9736,17 +9736,17 @@ header.mainHeader {
     width: 100%;
 }
 
-.furniture-search {
+/* .furniture-search {
     width: 70%;
-}
+} */
 
 span.twitter-typeahead {
     display: block !important;
 }
 
-.furniture-search form input {
+/* .furniture-search form input {
     width: 100% !important;
-}
+} */
 
 .tt-menu {
     width: 100% !important;
