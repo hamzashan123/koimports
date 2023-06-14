@@ -24,7 +24,7 @@
                 @csrf
                 @method('PATCH')
                 <div class="row">
-                    <div class="col-4">
+                    <div class="col-6">
                         <div class="form-group">
                             <label for="name" class="text-small text-uppercase">{{ __('Product Name') }}</label>
                             <input id="name" type="text" class="form-control form-control-lg" name="name"
@@ -32,7 +32,7 @@
                             @error('name')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-6">
                         <div class="form-group">
                             <label for="price" class="text-small text-uppercase">{{ __('Price') }}</label>
                             <input id="price" type="number" class="form-control form-control-lg" name="price"
@@ -42,13 +42,27 @@
                     </div>
                    
 
-                    <div class="col-4">
+                    <div class="col-6">
                         <div class="form-group">
                             <label for="product_import_url" class="text-small text-uppercase">{{ __('Image URL') }}</label>
                             <input id="product_import_url" type="text"  class="form-control form-control-lg"
                                    name="product_import_url"
                                    value="{{ old('product_import_url', $product->product_import_url) }}">
                             @error('product_import_url')<span class="text-danger">{{ $message }}</span>@enderror
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="form-group">
+                            <label for="status">Status</label>
+                            <select name="status" id="status" class="form-control">
+                                <option value="1" {{ old('status', $product->status) == "Active" ? 'selected' : null }}>
+                                    Active
+                                </option>
+                                <option value="0" {{ old('status', $product->status) == "Inactive" ? 'selected' : null }}>
+                                    Inactive
+                                </option>
+                            </select>
+                            @error('status')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
                     <!-- <div class="col-4">
@@ -97,7 +111,7 @@
                             @error('featured')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div> -->
-                    <div class="col-4">
+                    <!-- <div class="col-4">
                         <div class="form-group">
                             <label for="category_id">Category</label>
                             <select name="category_id" id="category_id" class="form-control">
@@ -112,21 +126,8 @@
                             </select>
                             @error('category_id')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="form-group">
-                            <label for="status">Status</label>
-                            <select name="status" id="status" class="form-control">
-                                <option value="1" {{ old('status', $product->status) == "Active" ? 'selected' : null }}>
-                                    Active
-                                </option>
-                                <option value="0" {{ old('status', $product->status) == "Inactive" ? 'selected' : null }}>
-                                    Inactive
-                                </option>
-                            </select>
-                            @error('status')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-                    </div>
+                    </div> -->
+                  
                     
                       
                 </div>

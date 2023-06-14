@@ -43,6 +43,7 @@
                     <th>Code</th>
                     <th>Name</th>
                     <th>Category</th>
+                    <th>SubCategory</th>
                     <!-- <th>Feature</th> -->
                     <!-- <th>Quantity</th> -->
                     <th>Customer Price</th>
@@ -77,6 +78,7 @@
                         <td>{{ $product->code }}</td>
                         <td>{{ $product->name }}</td>
                         <td>{{ $product->category ? $product->category->name : NULL }}</td>
+                        <td>{{ $product->subCategory ? $product->subCategory->name : NULL }}</td>
                         <!-- <td>{{ $product->featured }}</td> -->
                         <!-- <td>{{ $product->quantity }}</td> -->
                         <td>£{{ $product->price }}</td>

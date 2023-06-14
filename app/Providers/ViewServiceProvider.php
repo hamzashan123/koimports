@@ -70,7 +70,7 @@ class ViewServiceProvider extends ServiceProvider
                     });
                 }
                 $shop_categories_menu = Cache::get('shop_categories_menu');
-
+                
                 /* Tags */
                 if (!Cache::has('shop_tags_menu')) {
                     $shop_tags_menu = Tag::whereStatus(true)->withCount('products')->get();

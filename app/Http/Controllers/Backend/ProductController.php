@@ -24,7 +24,7 @@ class ProductController extends Controller
     {
         $this->authorize('access_product');
 
-        $products = Product::with('category', 'tags', 'firstMedia')
+        $products = Product::with('category', 'tags', 'firstMedia','subCategory')
             ->when(\request()->keyword != null, function ($query) {
                 $query->search(\request()->keyword);
             })
@@ -33,7 +33,7 @@ class ProductController extends Controller
             })
             ->orderBy(\request()->sortBy ?? 'id', \request()->orderBy ?? 'desc')
             ->paginate(\request()->limitBy ?? 10);
-
+           
         return view('backend.products.index', compact('products'));
     }
 

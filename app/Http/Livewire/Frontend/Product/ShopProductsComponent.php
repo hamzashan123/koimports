@@ -64,7 +64,7 @@ class ShopProductsComponent extends Component
         }
 
         $products = Product::with('firstMedia');
-        
+        //dd($products->get());
         if ($this->slug == '') {
             $products = $products->activeCategory();
             
@@ -72,9 +72,9 @@ class ShopProductsComponent extends Component
             $category = Category::whereSlug($this->slug)->first();
             
             if (is_null($category->parent_id)) {
-
-                //dd($category->id);
-                $categoriesIds = Category::whereParentId($category->id)->pluck('id')->toArray();
+               
+                
+                //$categoriesIds = Category::whereParentId($category->id)->pluck('id')->toArray();
                 //dd($categoriesIds);
                 // $products = $products->whereHas('category', function ($query) use ($categoriesIds) {
                 //     $query->whereIn('id', $categoriesIds);
@@ -83,6 +83,7 @@ class ShopProductsComponent extends Component
                 
                 
             } else {
+                
                 // $products = $products->with('category')
                 //     ->whereHas('category', function ($query) {
                 //     $query->where([
@@ -90,8 +91,8 @@ class ShopProductsComponent extends Component
                 //         'status' => true
                 //     ]);
                 // });
-                $products = $products->where('category_id', $category->id);
-                //dd($products->get());
+                $products = $products->where('sub_category_id', $category->id);
+                
             }
         }
         //dd($products->get());
@@ -99,7 +100,7 @@ class ShopProductsComponent extends Component
             ->hasQuantity()
             ->orderBy($sortField, $sortType)
             ->paginate($this->paginationLimit);
-       //dd($products);
+       
         return view('livewire.frontend.product.shop-products-component', compact('products'));
     }
 }

@@ -47,6 +47,7 @@ class ProductsImport implements ToModel, WithHeadingRow
             'price'    => $row['price'], 
             'premium_price'    => $row['premiumprice'],
             'category_id'    => $category_id,
+            'sub_category_id' => $subCategory->id,
             'product_import_url' => $row['imageurl'],
             'quantity' => 1,
             'status'    => true,
