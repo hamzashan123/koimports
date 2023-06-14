@@ -42,9 +42,9 @@ class ProductController extends Controller
         Product::truncate();
         DB::statement("SET foreign_key_checks=1");
 
-        DB::statement("SET foreign_key_checks=0");
-        Category::truncate();
-        DB::statement("SET foreign_key_checks=1");
+        // DB::statement("SET foreign_key_checks=0");
+        // Category::truncate();
+        // DB::statement("SET foreign_key_checks=1");
         
         Excel::import(new ProductsImport,request()->file('file'));
         
