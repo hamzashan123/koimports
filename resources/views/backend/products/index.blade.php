@@ -9,7 +9,7 @@
                 </h6>
             </div>
             <div class="productForm">
-            <form action="{{ route('admin.products.import') }}" method="POST" enctype="multipart/form-data" class="importProductsForm">
+            <form action="{{ route('admin.products.import') }}" method="POST" accept-charset="utf-8" enctype="multipart/form-data" class="importProductsForm">
                         @csrf
                         <input type="file" name="file"  id="FileUploadControl" class="form-control fileUpload" required>
                         <br>
