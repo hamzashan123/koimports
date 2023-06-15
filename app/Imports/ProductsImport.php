@@ -16,7 +16,7 @@ class ProductsImport implements ToModel, WithHeadingRow
     */
     public function model(array $row)
     {
-       
+        // dd($row);
         $category_id = null;
 
         $category  = Category::where('name',$row['category'])->first();
@@ -40,6 +40,10 @@ class ProductsImport implements ToModel, WithHeadingRow
         }else{
             $category_id = $subCategory->id;
         }
+
+        // if (strpos($row['description'], "�") !== false) {
+        //     dd($row['description']);
+        // } 
 
         return new Product([
             'code'     => $row['code'],

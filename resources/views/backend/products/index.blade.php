@@ -31,7 +31,7 @@
            
         </div>
 
-        <!-- @include('partials.backend.filter', ['model' => route('admin.products.index')]) -->
+        @include('partials.backend.filter', ['model' => route('admin.products.index')])
 
         <div class="table-responsive">
             <table class="table table-hover">

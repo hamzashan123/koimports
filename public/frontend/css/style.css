@@ -6637,6 +6637,11 @@ a.icon-cart-furniture.food-cart span {
     padding-right: 10px;
     width: 100%;
 }
+
+.login-form-container input[type="radio"] {
+    width: auto !important;
+    height: auto !important;
+}
 .login-form-container input::-moz-placeholder {
     color: #999;
     opacity: 1;
@@ -9778,7 +9783,7 @@ input[type="text"], input[type="email"], input[type="number"], input[type="passw
 
 textarea {
     height: 120px !important;
-    border-color: #050035 !important;
+    border: 1px solid #050035 !important;
     border-radius: 0px;
 }
 
