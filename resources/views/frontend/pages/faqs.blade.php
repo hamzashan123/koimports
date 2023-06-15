@@ -105,8 +105,11 @@
             acc[i].addEventListener("click", function() {
                 this.classList.toggle("active");
                 var panel = this.nextElementSibling;
-                if (panel.style.maxHeight) {
-                panel.classList.add('acordianshow');
+                
+                console.log();
+                if ( jQuery(this).next('div.panel').first().hasClass('acordianshow')) {
+                  jQuery(this).removeClass('active');
+                  jQuery(this).next('div.panel').first().removeClass('acordianshow');
                 } else {
                     panel.classList.add('acordianshow');
                 } 

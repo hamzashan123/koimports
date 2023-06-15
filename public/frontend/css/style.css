@@ -10088,7 +10088,15 @@ a.headingCategoryName {
     transition: all 0.3s ease 0s;
     border-radius: 30px;
 }
+.faqs button.accordion {
+    background: #050035;
+    color: white;
+    margin: 10px;
+}
 
+.faqs button.accordion:after {
+    color: white;
+}
 
 @media only screen and (max-width:768px) {
 
