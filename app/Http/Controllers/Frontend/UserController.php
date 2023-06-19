@@ -50,15 +50,16 @@ class UserController extends Controller
             'own_rent' => $request->own_rent,
             'open_store_time' => $request->open_store_time,
             'business_strategy' => json_encode($request->business_strategy),
-            'sourcing' => $request->sourcing,
+            // 'sourcing' => $request->sourcing,
             'business_description' => $request->business_description,
             'receive_email' => $request->receive_email,
             'user_image' => $userImage ?? $user->user_image,
             'password' => $password ?? $user->password
         ]);
 
-        toast('Updated profile successfully', 'success');
-        return redirect()->route('user.dashboard');
+        //toast('Updated profile successfully', 'success');
+        
+        return redirect()->back()->with('success', 'Updated profile successfully', );
     }
 
     public function removeImage()

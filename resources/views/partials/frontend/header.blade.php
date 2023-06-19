@@ -12,7 +12,7 @@
                         <ul>
                             @guest
                                 <li><a href="{{route('login')}}">Login</a></li>
-                                <li><a href="{{route('register')}}">Reg</a></li>
+                                <li><a href="{{route('register')}}">Register</a></li>
                             @else
                              
 
@@ -84,7 +84,7 @@
                                             <a href="{{route('login')}}">Login</a>
                                         </li>
                                         <li>
-                                            <a href="{{route('register')}}">Reg</a>
+                                            <a href="{{route('register')}}">Register</a>
                                         </li>
                                     @else
                                        

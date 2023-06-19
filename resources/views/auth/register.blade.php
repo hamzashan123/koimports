@@ -164,13 +164,13 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="col-12">
+                                        <!-- <div class="col-12">
                                             <div class="form-group">
                                                 <label for="sourcing" class="text-small text-uppercase">{{ __('Where are you sourcing your goods from? (Suppliers etc.)*') }}</label>
                                                 <input id="sourcing" type="text" class="form-control form-control-lg" name="sourcing" value="{{ old('sourcing') }}" placeholder="KOIMPORTS LTD OR Other...">
                                                 @error('sourcing')<span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>@enderror
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <div class="col-12">
                                             <div class="form-group">

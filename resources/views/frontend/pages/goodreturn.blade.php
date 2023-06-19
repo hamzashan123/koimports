@@ -13,17 +13,17 @@
     <section class="container padding-top-5 pb-5">
         
             <div class="col-lg-8 custom-8">
-            <h5>
+            <!-- <h5>
             Once you've filled out the returns form you'll receive an email with the information you've submitted. You MUST print this out and attach it to the goods you are returning. We MUST have this information included/attached to the goods you are returning for our drivers to accept them.
-            </h5>
+            </h5> -->
             <!-- <a style=" text-decoration: underline;" download="SampleOrderCsv" href="{{ asset('csv_sample.csv') }}" title="MyPdf">Download CSV Bulk Order Template</a> -->
             
                    
 
  
-            <h5>
+            <!-- <h5>
             Thank you.
-            </h5>
+            </h5> -->
             <form action="{{ route('products.return') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                     @csrf
                     
@@ -185,31 +185,16 @@
 
 
                     <h5>
-                Returns Policy
+             
 
-                To reflect manufacturers’ strict conditions with returns, we also have to be strict with returns.
-                <br>
-                <br>
-                A copy of proof of purchase or receipt must accompany any faulty item you wish to return, as this is a safeguard to you the retailer. Please familiarise yourselves with manufacturer’s warranty policies as many are 1 year although some companies extend to a 2-year warranty on electricals. If you have any queries, please ring the Sales Office.
-                <br>
-                <br>
-                Please note, we insist on receiving a receipt for all electrical goods. Issues with them will only be resolved if they’re still within warranty. If items are returned without receipts they will be disposed of within 4 weeks. The electrical product will also be returned to you if it’s sent with a receipt but it is out of warranty.
-                <br>
-                <br>
-                For Juwel items, we must also insist on a completed service card & copy of receipt for any item.
-                <br>
-                <br>
-                For Eheim – please be aware that if a part is repairable or can be easily replaced we have to do this. They have issued a returns policy, which has some useful tips/starting points for diagnosing a problem.
-                <br>
-                <br>
-                If you wish to return a special order item or transfer order – you must seek prior authorisation. An invoice number is a requirement on paperwork for these items please, as we are unable to find text/non-stock.
-                <br>
-                <br>
-                You have the option to either upload a copy of the customer receipt or send it back with the goods.
-                <br>
-                <br>
-                PLEASE ONLY COMPLETE THIS FORM THE WEEK YOU ARE RETURNING THE STOCK WITH OUR DRIVER.
-                <br>
+                Returns Policy To reflect manufacturers’ strict conditions with returns, KO Imports must also be strict with returns.
+                <br><br>
+A copy of the completed return form containing the purchase invoice number must accompany any faulty item you wish to return. Please familiarise yourselves with manufacturer’s warranty policies as many are 1 year although some companies offer extended warranties. If you have any queries, please ring the Sales Office.
+<br><br>
+Please note, for all electrical goods, issues with them will only be resolved if they are still within warranty. If items are returned without the completed return form and invoice, they will be disposed of within 4 weeks. The electrical product will also be returned to you if it is out of warranty at your return cost.
+<br><br>
+If you wish to return a special order item – you must seek prior authorisation from KO Imports. An invoice number is a requirement on the paperwork for these items.
+
                 </h5>
 
                

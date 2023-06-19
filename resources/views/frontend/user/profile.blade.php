@@ -12,9 +12,14 @@
             </div>
         </div>
     </section>
+   
     <section class="container pt-4 pb-5 login-form-container">
         <div class="row">
+       
             <div class="col-lg-8">
+            @if(Session::has('success'))
+            <p class="alert alert-success">{{ Session::get('success') }}</p>
+    @endif
                 <form action="{{ route('user.update_profile') }}" method="POST" enctype="multipart/form-data" autocomplete="off">
                     @csrf
                     @method('PATCH')
@@ -172,13 +177,13 @@
                                             </div>
                                         </div>
                                         
-                                        <div class="col-12">
+                                        <!-- <div class="col-12">
                                             <div class="form-group">
                                                 <label for="sourcing" class="text-small text-uppercase">{{ __('Where are you sourcing your goods from? (Suppliers etc.)*') }}</label>
                                                 <input id="sourcing" type="text" class="form-control form-control-lg" name="sourcing" value="{{ old('sourcing', auth()->user()->sourcing) }}"  placeholder="KOIMPORTS LTD OR Other...">
                                                 @error('sourcing')<span class="text-danger" role="alert"><strong>{{ $message }}</strong></span>@enderror
                                             </div>
-                                        </div>
+                                        </div> -->
 
                                         <div class="col-12">
                                             <div class="form-group">

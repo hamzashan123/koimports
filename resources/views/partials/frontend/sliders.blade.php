@@ -37,7 +37,7 @@
   </div>
 </section> -->
 
-<div class="topVideoHeading"> <h4>The UK’s largest wholesaler of aquatic company since 1990.</h4> </div>
+<div class="topVideoHeading"> <h4>Supplying the Koi, Pond and Aquatics Industry Since 1990</h4> </div>
 <div class="video-container">
   <video src="{{asset('images/bannervideo.mp4')}}" autoplay loop muted>
     Your browser does not support the video tag.
